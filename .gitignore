@@ -1,0 +1,68 @@
+### IntelliJ IDEA ###
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+build/
+.dart_tool/
+*.apk
+*.aab
+*.ipa
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Flutter / Dart ###
+build/
+# Flutter/Dart build outputs
+.dart_tool/
+*.apk
+*.aab
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+pubspec.lock
+
+# Output files
+
+*.ipa
+*.dill
+*.snap
+*.lock
+*.log
+*.tmp
+*.temp
+
+# Android/Gradle
+.gradle
+.idea/
+*.iml
+local.properties
+
+# Xcode
+DerivedData/
+*.xcworkspace
+*.xcodeproj
+*.xcuserstate
+Pods/

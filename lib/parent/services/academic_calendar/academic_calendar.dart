@@ -1,0 +1,155 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:royal/theme/colors.dart';
+
+import '../../../theme/fonts.dart';
+
+class AcademicCalendar extends StatefulWidget {
+  const AcademicCalendar({super.key});
+
+  @override
+  State<AcademicCalendar> createState() => _AcademicCalendarState();
+}
+
+class _AcademicCalendarState extends State<AcademicCalendar> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: NewColors.alwaysWhite,
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.065,
+            ),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    height: MediaQuery.sizeOf(context).width * 0.091,
+                    width: MediaQuery.sizeOf(context).width * 0.091,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: LineColors.border,
+                        width: 1,
+                      ),
+                    ),
+                    child: Image.asset(
+                      'assets/images/Dropdown Icon.png',
+                      height: MediaQuery.sizeOf(context).width * 0.045,
+                      width: MediaQuery.sizeOf(context).width * 0.045,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'التقويم الدراسي',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
+              ],
+            ),
+            Expanded(
+              child: ListView.separated(
+                itemCount: 5,
+                separatorBuilder: (_, __) =>
+                const SizedBox(height: 12),
+                itemBuilder: (context, index) {
+                  return Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: NewColors.lightBG.withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: LineColors.border),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Column(
+                              crossAxisAlignment:
+                              CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Image.asset(
+                                        'assets/images/calendar.png'),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                      CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                            'الفصل الدراسي الأول',
+                                            style: AppFonts.headingH6(
+                                                color:
+                                                NewColors.heading)),
+                                        SizedBox(height: 4),
+                                        Text('من سبتمبر - الي يناير',
+                                            style: AppFonts.body3(
+                                                color: NewColors
+                                                    .body)),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Divider(
+                          color: LineColors.line,
+                          thickness: 1,
+                        ),
+                        SizedBox(
+                          height: 8,
+                        ),
+                        Row(
+                          children: [
+                            Image.asset('assets/images/timer.png'),
+                            SizedBox(width: 8,),
+                            Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('بداية الفصل',style: AppFonts.body4(color: NewColors.body),),
+                                SizedBox(height: 5,),
+                                Text('10 سبتمبر 2025',style: AppFonts.body3(color: NewColors.supHeading),),
+                              ],
+                            ),
+                            SizedBox(width: 24,),
+                            Image.asset('assets/images/timer.png'),
+                            SizedBox(width: 8,),
+                            Column(crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('نهاية الفصل',style: AppFonts.body4(color: NewColors.body),),
+                                SizedBox(height: 5,),
+                                Text('1018 يناير 2026',style: AppFonts.body3(color: NewColors.supHeading),),
+                              ],
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

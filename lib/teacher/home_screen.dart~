@@ -1,0 +1,231 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:royal/parent/home.dart';
+import 'package:royal/theme/colors.dart';
+
+import '../theme/fonts.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: NewColors.alwaysWhite,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                children: [
+                  Container(
+                    height: MediaQuery.sizeOf(context).width * 0.117,
+                    width: MediaQuery.sizeOf(context).width * 0.117,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(12),
+                      color: NewColors.inputBG,
+                    ),
+                    padding: const EdgeInsets.all(6),
+                    child: Image.asset(
+                      'assets/images/Group.png',
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'اهلا 👋  أ. عبد العزيز مصطفي',
+                        style: AppFonts.supHeading(color: NewColors.heading),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        'G3, G4, G5, G6',
+                        style: AppFonts.caption1(color: NewColors.caption),
+                      ),
+                    ],
+                  ),
+                  Spacer(),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const Home()),
+                      );
+                    },
+                    child: Stack(
+                      alignment: Alignment.topLeft,
+                      children: [
+                        Container(
+                          height: MediaQuery.sizeOf(context).width * 0.117,
+                          width: MediaQuery.sizeOf(context).width * 0.117,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(24),
+                            color: NewColors.alwaysWhite,
+                          ),
+                          padding: const EdgeInsets.all(6),
+                          child: Image.asset(
+                            'assets/images/Notification (1).png',
+                          ),
+                        ),
+                        Positioned(
+                          top: 5,
+                          left: 18,
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                            decoration: BoxDecoration(
+                              color: NewColors.primary400,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Text(
+                              '4',
+                              style: AppFonts.body5(color: NewColors.alwaysWhite)
+                                  .copyWith(fontSize: 10),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
+                      child: containerField(
+                          imagePath: 'assets/images/MedicalReports.png',
+                          label: 'تقارير يومية'),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
+                      child: containerField(
+                          imagePath: 'assets/images/ResearchandStudyReport.png',
+                          label: 'تقارير فصلية'),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
+                      child: containerField(
+                          imagePath: 'assets/images/Addfilestobigfolder.png',
+                          label: 'تقارير اضافية'),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
+                      child: containerField(
+                          imagePath: 'assets/images/ClassTimetable.png',
+                          label: 'الفصول'),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
+                      child: containerField(
+                          imagePath: 'assets/images/PhotoDescription.png',
+                          label: 'الصور والفيدوهات'),
+                    ),
+                  ),
+                  Expanded(
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const Home()),
+                        );
+                      },
+                      child: containerField(
+                          imagePath: 'assets/images/MarketingMessagesorNotification.png',
+                          label: 'تعليقات اولياء الأمور'),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget containerField({required String imagePath, required String label}) {
+    return Column(
+      children: [
+        Container(
+          height: MediaQuery.sizeOf(context).height * 0.14,
+          width: MediaQuery.sizeOf(context).width * .276,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            color: NewColors.grayBox,
+          ),
+          padding: const EdgeInsets.all(6),
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.contain,
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          label,
+          style: AppFonts.body2(color: NewColors.supHeading),
+          textAlign: TextAlign.center,
+        ),
+      ],
+    );
+  }
+
+}

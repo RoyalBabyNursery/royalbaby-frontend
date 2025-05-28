@@ -1,0 +1,69 @@
+import 'package:flutter/material.dart';
+import 'package:royal/theme/fonts.dart';
+import 'package:royal/theme/colors.dart';
+
+class CustomTextFieldWidget extends StatefulWidget {
+  final String labelText;
+  final TextEditingController controller;
+  final bool isPassword;
+
+  const CustomTextFieldWidget({
+    super.key,
+    required this.labelText,
+    required this.controller,
+    this.isPassword = false,
+  });
+
+  @override
+  State<CustomTextFieldWidget> createState() => _CustomTextFieldWidgetState();
+}
+
+class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
+  bool _obscure = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: MediaQuery.sizeOf(context).height * 0.06,
+      decoration: BoxDecoration(
+        color: NewColors.inputBG,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: NewColors.inputBorder,
+          width: 1,
+        ),
+      ),
+      alignment: Alignment.center,
+      child: Row(
+        children: [
+          if (widget.isPassword)
+            IconButton(
+              icon: Icon(
+                _obscure ? Icons.visibility_off : Icons.visibility,
+                color: NewColors.placeHolder,
+              ),
+              onPressed: () {
+                setState(() {
+                  _obscure = !_obscure;
+                });
+              },
+            ),
+          Expanded(
+            child: TextField(
+              controller: widget.controller,
+              obscureText: widget.isPassword ? _obscure : false,
+              textAlign: TextAlign.right,
+              style: AppFonts.body2(color: NewColors.black),
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+                hintText: widget.labelText,
+                hintStyle: AppFonts.body2(color: NewColors.placeHolder),
+                border: InputBorder.none,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

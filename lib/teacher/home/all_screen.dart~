@@ -1,0 +1,175 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:royal/theme/colors.dart';
+
+import '../../theme/fonts.dart';
+
+class AllScreen extends StatefulWidget {
+  const AllScreen({super.key});
+
+  @override
+  State<AllScreen> createState() => _AllScreenState();
+}
+
+class _AllScreenState extends State<AllScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: NewColors.alwaysWhite,
+      body: Column(
+        children: [
+          Expanded(
+            child: ListView.separated(
+              padding: const EdgeInsets.all(1),
+              itemCount: 5,
+              separatorBuilder: (_, __) => const Divider(
+                color: LineColors.line,
+                thickness: 1,
+                height: 30,
+              ),
+              itemBuilder: (context, index) {
+                return InkWell(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      isScrollControlled: true,
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(24),
+                          topRight: Radius.circular(24),
+                        ),
+                      ),
+                      builder: (_) => const _NotificationDetailsSheet(),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/notification1.png',
+                        height: MediaQuery.sizeOf(context).width * 0.065,
+                        width: MediaQuery.sizeOf(context).width * 0.065,
+                      ),
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'تم فتح تقييمات الفصل الدراسي الثاني، يُرجى البدء في إدخال البيانات',
+                              style: AppFonts.supHeading4(color: NewColors.supHeading),
+                            ),
+                            const SizedBox(height: 5),
+                            Text(
+                              'اليوم 11:00ص',
+                              style: AppFonts.body4(color: NewColors.body),
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Image.asset(
+                        'assets/images/Vector.png',
+                        height: MediaQuery.sizeOf(context).width * 0.065,
+                        width: MediaQuery.sizeOf(context).width * 0.065,
+                      ),
+                    ],
+                  ),
+
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+class _NotificationDetailsSheet extends StatelessWidget {
+  const _NotificationDetailsSheet();
+
+  @override
+  Widget build(BuildContext context) {
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Container(
+        color: NewColors.alwaysWhite,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 20, 16, 30),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: Image.asset(
+                        'assets/images/Close Button Container.png',
+                        height: MediaQuery.sizeOf(context).width * 0.09,
+                        width: MediaQuery.sizeOf(context).width * 0.09,
+                      ),
+                    ),
+                    const SizedBox(width: 20),
+                    Text(
+                      'تفاصيل الاشعار',
+                      style: AppFonts.supHeading2(color: NewColors.supHeading),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                Text(
+                  'تم فتح تقييمات الفصل الدراسي الثاني، يُرجى البدء في إدخال البيانات.',
+                  style: AppFonts.headingH5(color: NewColors.heading),
+                ),
+                const SizedBox(height: 12),
+                Text(
+                  'تم تفعيل نظام التقييمات الخاصة بالفصل الدراسي الثاني.  يُرجى من السادة المعلمين والمعلمات البدء في إدخال تقييمات الطلاب بناءً على الملاحظات والسلوك والأداء العام خلال الفترة.',
+                  style: AppFonts.caption1(color: NewColors.caption),
+                ),
+                const SizedBox(height: 24),
+
+                Text('📝 ملاحظات الإدخال:',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                const SizedBox(height: 12),
+                Text(
+                    '• يتم تقييم كل طالب بناءً على المعايير المعتمدة في النظام (المشاركة، المهارات، السلوك، التفاعل).',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                Text(
+                    '• يرجى التأكد من حفظ كل إدخال قبل الانتقال لطالب آخر.',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                Text('• يمكن حفظ التقييمات كمسودة في حال عدم الانتهاء.',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+
+                const SizedBox(height: 24),
+                Text('⏰ الموعد النهائي للإدخال:',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                const SizedBox(height: 12),
+                Text(
+                    '• الخميس 30 مايو 2025 – الساعة 4:00 مساءً.',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                const SizedBox(height: 24),
+                Text('🧭 ملاحظات إضافية:',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                const SizedBox(height: 12),
+                Text(
+                    '• التقييم متاح فقط للطلاب المسجلين تحت إشرافك.',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                Text(
+                    '• في حال وجود استفسارات، يرجى التواصل مع مسؤول النظام أو الإدارة.',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                    '💡 شكرًا لتعاونكم المستمر معنا في دعم العملية التعليمية لأطفالكم.',
+                    style: AppFonts.body2(color: NewColors.supHeading)),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

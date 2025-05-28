@@ -1,0 +1,69 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:royal/theme/colors.dart';
+
+import '../../../theme/fonts.dart';
+
+class DailySchedule extends StatefulWidget {
+  const DailySchedule({super.key});
+
+  @override
+  State<DailySchedule> createState() => _DailyScheduleState();
+}
+
+class _DailyScheduleState extends State<DailySchedule> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: NewColors.alwaysWhite,
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: MediaQuery.sizeOf(context).height * 0.065,
+            ),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Container(
+                    padding: const EdgeInsets.all(6),
+                    height: MediaQuery.sizeOf(context).width * 0.091,
+                    width: MediaQuery.sizeOf(context).width * 0.091,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(
+                        color: LineColors.border,
+                        width: 1,
+                      ),
+                    ),
+                    child: Image.asset(
+                      'assets/images/Dropdown Icon.png',
+                      height: MediaQuery.sizeOf(context).width * 0.045,
+                      width: MediaQuery.sizeOf(context).width * 0.045,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  'الجدول اليومي',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
+              ],
+            ),
+            SizedBox(height: 20,),
+            Text('يوفر جدولنا اليومي وقتًا للأطفال للمشاركة في كل من الأنشطة الجماعية وأنشطة من اختيار الطفل المستقلة.',
+            style: AppFonts.caption2(color: NewColors.body),),
+            
+          ],
+        ),
+      ),
+    );
+  }
+}
