@@ -120,7 +120,6 @@ class _AddPhotosState extends State<AddPhotos> {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),

@@ -20,79 +20,81 @@ class _PhotoVideoState extends State<PhotoVideo> {
       backgroundColor: NewColors.alwaysWhite,
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 12),
-            Text(
-              'الصور والفيدوهات',
-              style: AppFonts.supHeading4(color: NewColors.heading),
-            ),
-            const SizedBox(height: 24),
-            Expanded(
-              child: GridView.builder(
-                itemCount: 4,
-                padding: const EdgeInsets.only(bottom: 10),
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  mainAxisSpacing: 10,
-                  crossAxisSpacing: 10,
-                  childAspectRatio: 0.65,
-                ),
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const ClassPhoto()),
-                      );
-                    },
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.25,
-                            child: GridView.count(
-                              crossAxisCount: 2,
-                              physics: const NeverScrollableScrollPhysics(),
-                              padding: EdgeInsets.zero,
-                              children: List.generate(4, (i) {
-                                return Image.asset(
-                                  'assets/images/Image1.png',
-                                  fit: BoxFit.cover,
-                                );
-                              }),
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 12),
+              Text(
+                'الصور والفيدوهات',
+                style: AppFonts.supHeading4(color: NewColors.heading),
+              ),
+              const SizedBox(height: 24),
+              Expanded(
+                child: GridView.builder(
+                  itemCount: 4,
+                  padding: const EdgeInsets.only(bottom: 10),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: 0.65,
+                  ),
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const ClassPhoto()),
+                        );
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(12),
+                            child: SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.25,
+                              child: GridView.count(
+                                crossAxisCount: 2,
+                                physics: const NeverScrollableScrollPhysics(),
+                                padding: EdgeInsets.zero,
+                                children: List.generate(4, (i) {
+                                  return Image.asset(
+                                    'assets/images/Image1.png',
+                                    fit: BoxFit.cover,
+                                  );
+                                }),
+                              ),
                             ),
                           ),
-                        ),
-                        const SizedBox(height: 6),
-                        Row(
-                          children: [
-                            Text(
-                              'فصل الاكتشاف',
-                              style: AppFonts.supHeading4(color: NewColors.supHeading),
-                            ),
-                            SizedBox(width: 4,),
-                            Text(
-                              '(G3)',
-                              style: AppFonts.body4(color: NewColors.body),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          '12 صورة , 2 فيديوهات',
-                          style: AppFonts.body4(color: NewColors.body),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-              ),
-            )
-          ],
+                          const SizedBox(height: 6),
+                          Row(
+                            children: [
+                              Text(
+                                'فصل الاكتشاف',
+                                style: AppFonts.supHeading4(color: NewColors.supHeading),
+                              ),
+                              SizedBox(width: 4,),
+                              Text(
+                                '(G3)',
+                                style: AppFonts.body4(color: NewColors.body),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            '12 صورة , 2 فيديوهات',
+                            style: AppFonts.body4(color: NewColors.body),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

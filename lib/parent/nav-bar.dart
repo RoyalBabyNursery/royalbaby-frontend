@@ -1,6 +1,5 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:royal/model/parent_kid.dart';
 import 'package:royal/theme/colors.dart';
 import 'package:royal/theme/fonts.dart';
 import 'home.dart';
@@ -9,7 +8,9 @@ import 'notifications.dart';
 import 'services/services.dart';
 
 class MainNavigation extends StatefulWidget {
-  const MainNavigation({super.key});
+  final ParentKid selectedKid;
+
+  const MainNavigation({super.key, required this.selectedKid});
 
   @override
   State<MainNavigation> createState() => _MainNavigationState();
@@ -18,12 +19,18 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = const [
-    Home(),
-    Services(),
-    Notifications(),
-    More(),
-  ];
+  late List<Widget> _pages;
+
+  @override
+  void initState() {
+    super.initState();
+    _pages = [
+      Home(selectedKid: widget.selectedKid),
+      const Services(),
+      const Notifications(),
+      const More(),
+    ];
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -50,8 +57,8 @@ class _MainNavigationState extends State<MainNavigation> {
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/Home.png',
-                width: MediaQuery.sizeOf(context).width*0.065,
-                height: MediaQuery.sizeOf(context).width*0.065,
+                width: MediaQuery.sizeOf(context).width * 0.065,
+                height: MediaQuery.sizeOf(context).width * 0.065,
                 color: _selectedIndex == 0 ? NewColors.primary500 : NewColors.caption,
               ),
               label: 'الرئيسيه',
@@ -59,8 +66,8 @@ class _MainNavigationState extends State<MainNavigation> {
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/Menu.png',
-                width: MediaQuery.sizeOf(context).width*0.065,
-                height: MediaQuery.sizeOf(context).width*0.065,
+                width: MediaQuery.sizeOf(context).width * 0.065,
+                height: MediaQuery.sizeOf(context).width * 0.065,
                 color: _selectedIndex == 1 ? NewColors.primary500 : NewColors.caption,
               ),
               label: 'الخدمات',
@@ -68,8 +75,8 @@ class _MainNavigationState extends State<MainNavigation> {
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/Notification.png',
-                width: MediaQuery.sizeOf(context).width*0.065,
-                height: MediaQuery.sizeOf(context).width*0.065,
+                width: MediaQuery.sizeOf(context).width * 0.065,
+                height: MediaQuery.sizeOf(context).width * 0.065,
                 color: _selectedIndex == 2 ? NewColors.primary500 : NewColors.caption,
               ),
               label: 'الاشعارات',
@@ -77,15 +84,14 @@ class _MainNavigationState extends State<MainNavigation> {
             BottomNavigationBarItem(
               icon: Image.asset(
                 'assets/images/More.png',
-                width: MediaQuery.sizeOf(context).width*0.065,
-                height: MediaQuery.sizeOf(context).width*0.065,
+                width: MediaQuery.sizeOf(context).width * 0.065,
+                height: MediaQuery.sizeOf(context).width * 0.065,
                 color: _selectedIndex == 3 ? NewColors.primary500 : NewColors.caption,
               ),
               label: 'المزيد',
             ),
           ],
         ),
-
       ),
     );
   }

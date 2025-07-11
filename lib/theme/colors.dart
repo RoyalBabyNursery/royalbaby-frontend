@@ -36,4 +36,5 @@ class LineColors {
   static const Color greenStroke = Color(0xFFDEEBDD);
   static const Color blueStroke = Color(0xFFD3E1F2);
   static const Color redStroke = Color(0xFFEBD5D3);
+  static const Color radioStroke = Color(0xFFDFDFDF);
 }

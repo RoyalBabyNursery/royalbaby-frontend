@@ -267,11 +267,11 @@ class RatingBottomSheet extends StatelessWidget {
                 filled: true,
                 fillColor: NewColors.inputBG,
                 enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(color: LineColors.inputBorder),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(8),
                   borderSide: BorderSide(color: LineColors.inputBorder, width: 1.5),
                 ),
               ),

@@ -99,40 +99,45 @@ class HelpForMore extends StatelessWidget {
   final String title;
   final String note;
   final String image;
+  final VoidCallback? onTap;
 
   const HelpForMore({
     super.key,
     required this.title,
     required this.note,
     required this.image,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 12.0,bottom: 12),
-      child: Row(
-        children: [
-          Container(
-            height: MediaQuery.sizeOf(context).width*0.1,
-            width: MediaQuery.sizeOf(context).width*0.1,
-            decoration: BoxDecoration(
-              color: NewColors.grayBox,
-              borderRadius: BorderRadius.circular(10)
+      child: InkWell(
+        onTap: onTap,
+        child: Row(
+          children: [
+            Container(
+              height: MediaQuery.sizeOf(context).width*0.1,
+              width: MediaQuery.sizeOf(context).width*0.1,
+              decoration: BoxDecoration(
+                color: NewColors.grayBox,
+                borderRadius: BorderRadius.circular(10)
+              ),
+              child: Image.asset(image),
             ),
-            child: Image.asset(image),
-          ),
-          SizedBox(width: 12,),
-          Column(crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(title,style: AppFonts.supHeading3(color: NewColors.supHeading),),
-              SizedBox(height: 8,),
-              Text(note,style: AppFonts.body5(color: NewColors.caption),),
-            ],
-          ),
-          Spacer(),
-          Image.asset('assets/images/Vector.png')
-        ],
+            SizedBox(width: 12,),
+            Column(crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(title,style: AppFonts.supHeading3(color: NewColors.supHeading),),
+                SizedBox(height: 8,),
+                Text(note,style: AppFonts.body5(color: NewColors.caption),),
+              ],
+            ),
+            Spacer(),
+            Image.asset('assets/images/Vector.png')
+          ],
+        ),
       ),
     );
   }

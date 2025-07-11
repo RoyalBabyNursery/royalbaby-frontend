@@ -5,14 +5,14 @@ import 'package:royal/widget/container.dart';
 
 import '../../theme/fonts.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({super.key});
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<ProfileScreen> createState() => _ProfileState();
 }
 
-class _ProfileState extends State<Profile> {
+class _ProfileState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,12 +87,12 @@ class _ProfileState extends State<Profile> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'اسم الطالب',
+                              'اسم المعلم',
                               style: AppFonts.body3(color: NewColors.caption),
                             ),
                             SizedBox(height: 3,),
                             Text(
-                              'احمد ابراهيم عبدالله',
+                              'عبد العزيز مصطفي',
                               style: AppFonts.supHeading3(
                                   color: NewColors.supHeading),
                             ),
@@ -106,39 +106,24 @@ class _ProfileState extends State<Profile> {
               SizedBox(
                 height: 12,
               ),
-              ProfileHelp(title: 'المرحلة', note: 'G4'),
+              ProfileHelp(title: 'رقم الهاتف', note: '+965500012'),
               Divider(
                 height: 1,
                 color: LineColors.line,
               ),
-              ProfileHelp(title: 'الفصل', note: 'B2'),
+              ProfileHelp(title: 'الفصول', note: 'G3, G4, G5, G6'),
               Divider(
                 height: 1,
                 color: LineColors.line,
               ),
-              ProfileHelp(title: 'الرقم المدني', note: '31505101111'),
+              ProfileHelp(title: 'المسمي الوظيفي', note: 'معلم أول'),
               Divider(
                 height: 1,
                 color: LineColors.line,
               ),
               ProfileHelp(
-                  title: 'البريد الإلكتروني (الحضانة)',
-                  note: 'info@royalbaby.edu.kw'),
-              Divider(
-                height: 1,
-                color: LineColors.line,
-              ),
-              ProfileHelp(title: 'كلمة السر', note: 'Ahmed2233'),
-              Divider(
-                height: 1,
-                color: LineColors.line,
-              ),
-              ProfileHelp(title: 'رقم هاتف الأب', note: '50001234'),
-              Divider(
-                height: 1,
-                color: LineColors.line,
-              ),
-              ProfileHelp(title: 'رقم هاتف الأم', note: '50005678'),
+                  title: 'صلاحيات الحساب',
+                  note: 'معلم'),
             ],
           ),
         ),

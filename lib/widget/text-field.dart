@@ -18,6 +18,7 @@ class CustomTextFieldWidget extends StatefulWidget {
   State<CustomTextFieldWidget> createState() => _CustomTextFieldWidgetState();
 }
 
+
 class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
   bool _obscure = true;
 
@@ -107,5 +108,152 @@ class InfoText extends StatelessWidget {
     return
         Text('•   '+label, style: AppFonts.body3(color: NewColors.body));
 
+  }
+}
+
+
+class TimeInputField extends StatelessWidget {
+  final String hintText;
+  final VoidCallback? onTap;
+  final TextEditingController? controller;
+
+  const TimeInputField({
+    super.key,
+    this.hintText = 'ادخل الوقت',
+    this.onTap,
+    this.controller,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: controller,
+      readOnly: true,
+      onTap: onTap,
+      textDirection: TextDirection.rtl,
+      decoration: InputDecoration(
+        hintText: hintText,
+        hintTextDirection: TextDirection.rtl,
+        hintStyle: AppFonts.body2(color: NewColors.placeHolder),
+        filled: true,
+        fillColor: NewColors.inputBG,
+        suffixIcon: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Icon(Icons.access_time, color: NewColors.placeHolder),
+        ),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: LineColors.inputBorder),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: LineColors.inputBorder, width: 1.5),
+        ),
+      ),
+    );
+  }
+}
+
+
+class QuantityTextField extends StatelessWidget {
+  final String hintText;
+  final TextEditingController? controller;
+
+  const QuantityTextField({
+    super.key,
+    this.hintText = 'ادخل الكمية',
+    this.controller,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: controller,
+      textDirection: TextDirection.rtl,
+      style: AppFonts.body2(color: NewColors.heading),
+      decoration: InputDecoration(
+        hintText: hintText,
+        hintTextDirection: TextDirection.rtl,
+        hintStyle: AppFonts.body2(color: NewColors.placeHolder),
+        filled: true,
+        fillColor: NewColors.inputBG,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: LineColors.inputBorder),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: LineColors.inputBorder, width: 1.5),
+        ),
+      ),
+      keyboardType: TextInputType.number,
+    );
+  }
+}
+
+
+class NameTextField extends StatelessWidget {
+
+  const NameTextField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      textDirection: TextDirection.rtl,
+      decoration: InputDecoration(
+        hintText: 'ابحث باسم الطالب...',
+        hintStyle: AppFonts.body2(color: NewColors.placeHolder),
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Image.asset('assets/images/search-normal.png'),
+        ),
+        filled: true,
+        fillColor: NewColors.inputBG,
+        contentPadding:
+        const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: LineColors.inputBorder),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: LineColors.border),
+        ),
+      ),
+    );
+  }
+}
+
+
+class NoteTextField extends StatelessWidget {
+
+  const NoteTextField({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      maxLines: 3,
+      decoration: InputDecoration(
+        hintText: 'ادخل ملاحظاتك هنا...',
+        hintStyle: AppFonts.body2(color: NewColors.placeHolder),
+        filled: true,
+        fillColor: NewColors.inputBG,
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: LineColors.inputBorder),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(
+              color: LineColors.inputBorder, width: 1.5),
+        ),
+      ),
+    );
   }
 }

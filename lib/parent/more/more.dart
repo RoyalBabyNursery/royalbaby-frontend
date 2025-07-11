@@ -10,6 +10,9 @@ import 'package:royal/theme/colors.dart';
 import 'package:royal/theme/fonts.dart';
 import 'package:royal/widget/container.dart';
 
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../screen/log_in.dart';
+
 class More extends StatefulWidget {
   const More({super.key});
 
@@ -193,9 +196,21 @@ class _MoreState extends State<More> {
                     color: LineColors.line,
                   ),
                   HelpForMore(
-                      title: 'تسجيل خروج',
-                      note: 'إنهاء الجلسة الحالية بأمان',
-                      image: 'assets/images/logout.png')
+                    title: 'تسجيل خروج',
+                    note: 'إنهاء الجلسة الحالية بأمان',
+                    image: 'assets/images/logout.png',
+                     onTap: () async {
+                      final prefs = await SharedPreferences.getInstance();
+                      await prefs.clear();
+
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LogIn()),
+                            (route) => false,
+                      );
+                    },
+                  ),
+
                 ],
               ),
             )
