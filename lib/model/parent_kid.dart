@@ -1,4 +1,4 @@
-import 'class_model.dart';
+import 'package:royalbabyapp/model/classe_model1.dart';
 
 class ParentKid {
   final int id;
@@ -45,8 +45,8 @@ class ParentKid {
       courseAttached: json['course_attached'],
       classAttached: json['class_attached'],
       registrationFormAttached: json['registration_form_attached'],
-      studentClass: json['class'] != null ? ClassModel.fromJson(json['class']) : null,
+      studentClass:
+          json['class'] != null ? ClassModel.fromJson(json['class']) : null,
     );
   }
 }
-

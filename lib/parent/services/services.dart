@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/parent/services/academic_calendar/academic_calendar.dart';
-import 'package:royal/parent/services/certificates/certificates.dart';
-import 'package:royal/parent/services/daily_schedule/daily_schedule.dart';
-import 'package:royal/parent/services/payments/payments.dart';
-import 'package:royal/parent/services/photoalbum/photo_album.dart';
-import 'package:royal/parent/services/reports/reports.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
+import 'package:royalbabyapp/parent/services/academic_calendar/academic_calendar.dart';
+import 'package:royalbabyapp/parent/services/certificates/certificates.dart';
+import 'package:royalbabyapp/parent/services/daily_schedule/daily_schedule.dart';
+import 'package:royalbabyapp/parent/services/payments/payments.dart';
+import 'package:royalbabyapp/parent/services/photoalbum/photo_album.dart';
+import 'package:royalbabyapp/parent/services/reports/reports.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
 
 class Services extends StatefulWidget {
   const Services({super.key});
@@ -17,16 +17,17 @@ class Services extends StatefulWidget {
 }
 
 class _ServicesState extends State<Services> {
-
   final List<Map<String, String>> services = const [
     {'title': 'التقارير', 'image': 'assets/images/MedicalReports.png'},
     {'title': 'المدفوعات', 'image': 'assets/images/Paymentfailed.png'},
     {'title': 'الجدول اليومي', 'image': 'assets/images/ScheduleMeeting.png'},
     {'title': 'الشهادات', 'image': 'assets/images/ISO9001.png'},
     {'title': 'البوم الصور', 'image': 'assets/images/PhotoDescription.png'},
-    {'title': 'التقويم الدراسي', 'image': 'assets/images/Conditionofschool.png'},
+    {
+      'title': 'التقويم الدراسي',
+      'image': 'assets/images/Conditionofschool.png',
+    },
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +35,14 @@ class _ServicesState extends State<Services> {
       backgroundColor: NewColors.alwaysWhite,
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 15,),
-            Text('الخدمات',style: AppFonts.headingH4(color: NewColors.heading),),
+            SizedBox(height: 15),
+            Text(
+              'الخدمات',
+              style: AppFonts.headingH4(color: NewColors.heading),
+            ),
             const SizedBox(height: 20),
             const SizedBox(height: 20),
             Expanded(
@@ -49,57 +54,82 @@ class _ServicesState extends State<Services> {
                   mainAxisSpacing: 16,
                   childAspectRatio: 0.9,
                 ),
-                  itemBuilder: (context, index) {
-                    final item = services[index];
-                    return InkWell(
-                      onTap: () {
-                        switch (index) {
-                          case 0:
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => const Reports()));
-                            break;
-                          case 1:
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => const Payments()));
-                            break;
-                          case 2:
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => const DailySchedule()));
-                            break;
-                          case 3:
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => const Certificates()));
-                            break;
-                          case 4:
-                           Navigator.push(context, MaterialPageRoute(builder: (_) => const PhotoAlbum()));
-                            break;
-                          case 5:
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => const AcademicCalendar()));
-                            break;
-                        }
-                      },
-                      child: Column(
-                        children: [
-                          Container(
-                            height: MediaQuery.sizeOf(context).width * 0.23,
-                            width: MediaQuery.sizeOf(context).width * 0.23,
-                            decoration: BoxDecoration(
-                              color: NewColors.inputBG,
-                              borderRadius: BorderRadius.circular(12),
+                itemBuilder: (context, index) {
+                  final item = services[index];
+                  return InkWell(
+                    onTap: () {
+                      switch (index) {
+                        case 0:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const Reports()),
+                          );
+                          break;
+                        case 1:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (_) => const Payments()),
+                          );
+                          break;
+                        case 2:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const DailySchedule(),
                             ),
-                            padding: const EdgeInsets.all(12),
-                            child: Image.asset(
-                              item['image']!,
-                              fit: BoxFit.contain,
+                          );
+                          break;
+                        case 3:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const Certificates(),
                             ),
+                          );
+                          break;
+                        case 4:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const PhotoAlbum(),
+                            ),
+                          );
+                          break;
+                        case 5:
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => const AcademicCalendar(),
+                            ),
+                          );
+                          break;
+                      }
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          height: MediaQuery.sizeOf(context).width * 0.23,
+                          width: MediaQuery.sizeOf(context).width * 0.23,
+                          decoration: BoxDecoration(
+                            color: NewColors.inputBG,
+                            borderRadius: BorderRadius.circular(12),
                           ),
-                          const SizedBox(height: 8),
-                          Text(
-                            item['title']!,
-                            style: AppFonts.body4(color: NewColors.supHeading),
-                            textAlign: TextAlign.center,
+                          padding: const EdgeInsets.all(12),
+                          child: Image.asset(
+                            item['image']!,
+                            fit: BoxFit.contain,
                           ),
-                        ],
-                      ),
-                    );
-                  }
-
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          item['title']!,
+                          style: AppFonts.body4(color: NewColors.supHeading),
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
+                  );
+                },
               ),
             ),
           ],

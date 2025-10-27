@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/parent/services/reports/progress_report.dart';
-import 'package:royal/parent/services/reports/term_report.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
+import 'package:royalbabyapp/parent/services/reports/progress_report.dart';
+import 'package:royalbabyapp/parent/services/reports/term_report.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
 
 import 'daily_report.dart';
 
@@ -31,9 +31,7 @@ class _ReportsState extends State<Reports> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.065,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
             Row(
               children: [
                 InkWell(
@@ -46,10 +44,7 @@ class _ReportsState extends State<Reports> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -59,9 +54,7 @@ class _ReportsState extends State<Reports> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'التقارير',
                   style: AppFonts.body2(color: NewColors.supHeading),
@@ -73,9 +66,12 @@ class _ReportsState extends State<Reports> {
                       context: context,
                       isScrollControlled: true,
                       shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                        borderRadius: BorderRadius.vertical(
+                          top: Radius.circular(24),
+                        ),
                       ),
-                      builder: (context) => const ReportFilterSheet(), // بننشئ الواجهة هنا
+                      builder: (context) =>
+                          const ReportFilterSheet(), // بننشئ الواجهة هنا
                     );
                   },
                   child: Container(
@@ -84,10 +80,7 @@ class _ReportsState extends State<Reports> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/filter.png',
@@ -97,14 +90,10 @@ class _ReportsState extends State<Reports> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 3,
-                )
+                SizedBox(width: 3),
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             Row(
               children: List.generate(tabs.length, (index) {
                 final isSelected = selectedTab == index;
@@ -118,7 +107,9 @@ class _ReportsState extends State<Reports> {
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 12),
+                        horizontal: 12,
+                        vertical: 12,
+                      ),
                       decoration: BoxDecoration(
                         color: isSelected
                             ? NewColors.primary400
@@ -159,8 +150,8 @@ class _ReportsState extends State<Reports> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                          const DailyReport()),
+                                    builder: (context) => const DailyReport(),
+                                  ),
                                 );
                               },
                               child: Container(
@@ -182,7 +173,8 @@ class _ReportsState extends State<Reports> {
                                             Row(
                                               children: [
                                                 Image.asset(
-                                                    'assets/images/calendar.png'),
+                                                  'assets/images/calendar.png',
+                                                ),
                                                 const SizedBox(width: 10),
                                                 Column(
                                                   crossAxisAlignment:
@@ -191,15 +183,16 @@ class _ReportsState extends State<Reports> {
                                                     Text(
                                                       'الأربعاء',
                                                       style: AppFonts.headingH6(
-                                                          color: NewColors
-                                                              .heading),
+                                                        color:
+                                                            NewColors.heading,
+                                                      ),
                                                     ),
                                                     const SizedBox(height: 4),
                                                     Text(
                                                       '7 مايو 2025',
                                                       style: AppFonts.body4(
-                                                          color:
-                                                              NewColors.body),
+                                                        color: NewColors.body,
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -211,7 +204,8 @@ class _ReportsState extends State<Reports> {
                                         Text(
                                           'ممتاز',
                                           style: AppFonts.body4(
-                                              color: NewColors.body),
+                                            color: NewColors.body,
+                                          ),
                                         ),
                                         const SizedBox(width: 5),
                                         Image.asset('assets/images/star.png'),
@@ -226,19 +220,25 @@ class _ReportsState extends State<Reports> {
                                         Row(
                                           children: [
                                             Image.asset(
-                                                'assets/images/kissing emoj.png'),
+                                              'assets/images/kissing emoj.png',
+                                            ),
                                             const SizedBox(width: 10),
                                             Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
-                                                Text('الحالة العامة',
-                                                    style: AppFonts.body4(
-                                                        color: NewColors.body)),
-                                                Text('نشيط ومتفاعل',
-                                                    style: AppFonts.body3(
-                                                        color: NewColors
-                                                            .supHeading)),
+                                                Text(
+                                                  'الحالة العامة',
+                                                  style: AppFonts.body4(
+                                                    color: NewColors.body,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  'نشيط ومتفاعل',
+                                                  style: AppFonts.body3(
+                                                    color: NewColors.supHeading,
+                                                  ),
+                                                ),
                                               ],
                                             ),
                                           ],
@@ -250,13 +250,18 @@ class _ReportsState extends State<Reports> {
                                         const SizedBox(width: 5),
                                         Column(
                                           children: [
-                                            Text('الحضور والانصراف',
-                                                style: AppFonts.body4(
-                                                    color: NewColors.body)),
-                                            Text('7:45 ص - 2:15 م',
-                                                style: AppFonts.body3(
-                                                    color:
-                                                        NewColors.supHeading)),
+                                            Text(
+                                              'الحضور والانصراف',
+                                              style: AppFonts.body4(
+                                                color: NewColors.body,
+                                              ),
+                                            ),
+                                            Text(
+                                              '7:45 ص - 2:15 م',
+                                              style: AppFonts.body3(
+                                                color: NewColors.supHeading,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                         const Spacer(),
@@ -282,8 +287,8 @@ class _ReportsState extends State<Reports> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                      const TermReport()),
+                                    builder: (context) => const TermReport(),
+                                  ),
                                 );
                               },
                               child: Container(
@@ -305,23 +310,27 @@ class _ReportsState extends State<Reports> {
                                             Row(
                                               children: [
                                                 Image.asset(
-                                                    'assets/images/calendar.png'),
-                                                SizedBox(
-                                                  width: 10,
+                                                  'assets/images/calendar.png',
                                                 ),
+                                                SizedBox(width: 10),
                                                 Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Text('الفصل الثاني',
-                                                        style: AppFonts.headingH6(
-                                                            color: NewColors
-                                                                .heading)),
+                                                    Text(
+                                                      'الفصل الثاني',
+                                                      style: AppFonts.headingH6(
+                                                        color:
+                                                            NewColors.heading,
+                                                      ),
+                                                    ),
                                                     SizedBox(height: 4),
-                                                    Text('7 مايو 2025',
-                                                        style: AppFonts.body4(
-                                                            color:
-                                                                NewColors.body)),
+                                                    Text(
+                                                      '7 مايو 2025',
+                                                      style: AppFonts.body4(
+                                                        color: NewColors.body,
+                                                      ),
+                                                    ),
                                                   ],
                                                 ),
                                               ],
@@ -329,12 +338,13 @@ class _ReportsState extends State<Reports> {
                                           ],
                                         ),
                                         Spacer(),
-                                        Text('ممتاز',
-                                            style: AppFonts.body4(
-                                                color: NewColors.body)),
-                                        SizedBox(
-                                          width: 5,
+                                        Text(
+                                          'ممتاز',
+                                          style: AppFonts.body4(
+                                            color: NewColors.body,
+                                          ),
                                         ),
+                                        SizedBox(width: 5),
                                         Image.asset('assets/images/star.png'),
                                       ],
                                     ),
@@ -342,17 +352,21 @@ class _ReportsState extends State<Reports> {
                                     Row(
                                       children: [
                                         Image.asset('assets/images/skills.png'),
-                                        SizedBox(
-                                          width: 10,
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'المهارات المكتسبة :',
+                                          style: AppFonts.body4(
+                                            color: NewColors.body,
+                                          ),
                                         ),
-                                        Text('المهارات المكتسبة :',
-                                            style: AppFonts.body4(
-                                                color: NewColors.body)),
-                                        Text('زيادة الثقة بالنفس',
-                                            style: AppFonts.body3(
-                                                color: NewColors.supHeading)),
+                                        Text(
+                                          'زيادة الثقة بالنفس',
+                                          style: AppFonts.body3(
+                                            color: NewColors.supHeading,
+                                          ),
+                                        ),
                                         Spacer(),
-                                        Image.asset('assets/images/Vector.png')
+                                        Image.asset('assets/images/Vector.png'),
                                       ],
                                     ),
                                   ],
@@ -374,8 +388,9 @@ class _ReportsState extends State<Reports> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>
-                                      const ProgressReport()),
+                                    builder: (context) =>
+                                        const ProgressReport(),
+                                  ),
                                 );
                               },
                               child: Container(
@@ -397,24 +412,27 @@ class _ReportsState extends State<Reports> {
                                             Row(
                                               children: [
                                                 Image.asset(
-                                                    'assets/images/calendar.png'),
-                                                SizedBox(
-                                                  width: 10,
+                                                  'assets/images/calendar.png',
                                                 ),
+                                                SizedBox(width: 10),
                                                 Column(
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Text('الفتره الثاني',
-                                                        style: AppFonts.headingH6(
-                                                            color: NewColors
-                                                                .heading)),
+                                                    Text(
+                                                      'الفتره الثاني',
+                                                      style: AppFonts.headingH6(
+                                                        color:
+                                                            NewColors.heading,
+                                                      ),
+                                                    ),
                                                     SizedBox(height: 4),
                                                     Text(
-                                                        'من 1 مارس 25 إلى 15 أبريل 25',
-                                                        style: AppFonts.body4(
-                                                            color:
-                                                                NewColors.body)),
+                                                      'من 1 مارس 25 إلى 15 أبريل 25',
+                                                      style: AppFonts.body4(
+                                                        color: NewColors.body,
+                                                      ),
+                                                    ),
                                                   ],
                                                 ),
                                               ],
@@ -422,12 +440,13 @@ class _ReportsState extends State<Reports> {
                                           ],
                                         ),
                                         Spacer(),
-                                        Text('ممتاز',
-                                            style: AppFonts.body4(
-                                                color: NewColors.body)),
-                                        SizedBox(
-                                          width: 5,
+                                        Text(
+                                          'ممتاز',
+                                          style: AppFonts.body4(
+                                            color: NewColors.body,
+                                          ),
                                         ),
+                                        SizedBox(width: 5),
                                         Image.asset('assets/images/star.png'),
                                       ],
                                     ),
@@ -435,17 +454,21 @@ class _ReportsState extends State<Reports> {
                                     Row(
                                       children: [
                                         Image.asset('assets/images/timer.png'),
-                                        SizedBox(
-                                          width: 10,
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'الحضور :',
+                                          style: AppFonts.body4(
+                                            color: NewColors.body,
+                                          ),
                                         ),
-                                        Text('الحضور :',
-                                            style: AppFonts.body4(
-                                                color: NewColors.body)),
-                                        Text('45 يوم (90%)',
-                                            style: AppFonts.body3(
-                                                color: NewColors.supHeading)),
+                                        Text(
+                                          '45 يوم (90%)',
+                                          style: AppFonts.body3(
+                                            color: NewColors.supHeading,
+                                          ),
+                                        ),
                                         Spacer(),
-                                        Image.asset('assets/images/Vector.png')
+                                        Image.asset('assets/images/Vector.png'),
                                       ],
                                     ),
                                   ],
@@ -468,7 +491,6 @@ class _ReportsState extends State<Reports> {
   }
 }
 
-
 class ReportFilterSheet extends StatelessWidget {
   const ReportFilterSheet({super.key});
 
@@ -476,13 +498,14 @@ class ReportFilterSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return Directionality(
       textDirection: TextDirection.rtl,
-      child: Container(decoration: BoxDecoration(
-        color: NewColors.alwaysWhite,
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(24),
-          topRight: Radius.circular(24),
-        )
-      ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: NewColors.alwaysWhite,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(24),
+            topRight: Radius.circular(24),
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 20, 16, 30),
           child: Column(
@@ -495,58 +518,98 @@ class ReportFilterSheet extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () => Navigator.pop(context),
-                    child: Image.asset('assets/images/Close Button Container.png')
+                    child: Image.asset(
+                      'assets/images/Close Button Container.png',
+                    ),
                   ),
-                  SizedBox(width: 20,),
-                  Text('تصفية التقارير', style: AppFonts.supHeading2(color: NewColors.heading)),
+                  SizedBox(width: 20),
+                  Text(
+                    'تصفية التقارير',
+                    style: AppFonts.supHeading2(color: NewColors.heading),
+                  ),
                 ],
               ),
               const SizedBox(height: 20),
 
-              Text('التاريخ', style: AppFonts.supHeading3(color: NewColors.supHeading)),
+              Text(
+                'التاريخ',
+                style: AppFonts.supHeading3(color: NewColors.supHeading),
+              ),
               const SizedBox(height: 10),
               RadioListTile(
-                title: Text('الأحدث أولاً (افتراضي)', style: AppFonts.body2(color: NewColors.body)),
+                title: Text(
+                  'الأحدث أولاً (افتراضي)',
+                  style: AppFonts.body2(color: NewColors.body),
+                ),
                 value: 'latest',
                 groupValue: null,
-                visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+                visualDensity: const VisualDensity(
+                  horizontal: -4,
+                  vertical: -4,
+                ),
                 onChanged: (_) {},
               ),
               RadioListTile(
-                title: Text('الأقدم أولاً', style: AppFonts.body2(color: NewColors.body)),
+                title: Text(
+                  'الأقدم أولاً',
+                  style: AppFonts.body2(color: NewColors.body),
+                ),
                 value: 'oldest',
                 groupValue: null,
-                visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+                visualDensity: const VisualDensity(
+                  horizontal: -4,
+                  vertical: -4,
+                ),
                 onChanged: (_) {},
               ),
               RadioListTile(
-                title: Text('اختيار تاريخ محدد (من → إلى)', style: AppFonts.body2(color: NewColors.body)),
+                title: Text(
+                  'اختيار تاريخ محدد (من → إلى)',
+                  style: AppFonts.body2(color: NewColors.body),
+                ),
                 value: 'custom',
                 groupValue: null,
-                visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+                visualDensity: const VisualDensity(
+                  horizontal: -4,
+                  vertical: -4,
+                ),
                 onChanged: (_) {},
               ),
-              const Divider(height: 32,color: LineColors.line,),
-              Text('التقييم العام', style: AppFonts.supHeading3(color: NewColors.supHeading)),
+              const Divider(height: 32, color: LineColors.line),
+              Text(
+                'التقييم العام',
+                style: AppFonts.supHeading3(color: NewColors.supHeading),
+              ),
               const SizedBox(height: 10),
               ...['ممتاز', 'جيد جداً', 'جيد', 'يحتاج متابعة'].map((label) {
                 return RadioListTile(
-                  title: Text(label, style: AppFonts.body2(color: NewColors.body)),
+                  title: Text(
+                    label,
+                    style: AppFonts.body2(color: NewColors.body),
+                  ),
                   value: label,
                   groupValue: null,
-                  visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+                  visualDensity: const VisualDensity(
+                    horizontal: -4,
+                    vertical: -4,
+                  ),
                   onChanged: (_) {},
                 );
               }).toList(),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Container(
-                height: MediaQuery.sizeOf(context).height*0.057,
+                height: MediaQuery.sizeOf(context).height * 0.057,
                 width: MediaQuery.sizeOf(context).width,
                 decoration: BoxDecoration(
                   color: NewColors.primary500,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Center(child: Text('حفظ',style: AppFonts.buttonLg(color: NewColors.alwaysWhite),)),
+                child: Center(
+                  child: Text(
+                    'حفظ',
+                    style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
+                  ),
+                ),
               ),
             ],
           ),
@@ -555,4 +618,3 @@ class ReportFilterSheet extends StatelessWidget {
     );
   }
 }
-

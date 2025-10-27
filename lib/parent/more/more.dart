@@ -1,15 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/parent/more/about_us.dart';
-import 'package:royal/parent/more/contact_us.dart';
-import 'package:royal/parent/more/faq.dart';
-import 'package:royal/parent/more/profile.dart';
-import 'package:royal/parent/more/regulation.dart';
-import 'package:royal/parent/more/setting.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
-import 'package:royal/widget/container.dart';
-
+import 'package:royalbabyapp/parent/more/about_us.dart';
+import 'package:royalbabyapp/parent/more/contact_us.dart';
+import 'package:royalbabyapp/parent/more/faq.dart';
+import 'package:royalbabyapp/parent/more/profile.dart';
+import 'package:royalbabyapp/parent/more/regulation.dart';
+import 'package:royalbabyapp/parent/more/setting.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
+import 'package:royalbabyapp/widget/container.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../screen/log_in.dart';
 
@@ -40,20 +39,21 @@ class _MoreState extends State<More> {
                     height: MediaQuery.sizeOf(context).width * 0.18,
                     width: MediaQuery.sizeOf(context).width * 0.18,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: NewColors.bg),
+                      borderRadius: BorderRadius.circular(12),
+                      color: NewColors.bg,
+                    ),
                     child: Image.asset('assets/images/user.png'),
                   ),
-                  SizedBox(
-                    height: 8,
-                  ),
+                  SizedBox(height: 8),
                   InkWell(
                     onTap: () {
                       showModalBottomSheet(
                         context: context,
                         isScrollControlled: true,
                         shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(24),
+                          ),
                         ),
                         builder: (context) => const SwitchStudentSheet(),
                       );
@@ -71,13 +71,8 @@ class _MoreState extends State<More> {
                     ),
                   ),
 
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    'G4',
-                    style: AppFonts.body2(color: NewColors.caption),
-                  ),
+                  SizedBox(height: 8),
+                  Text('G4', style: AppFonts.body2(color: NewColors.caption)),
                 ],
               ),
             ),
@@ -90,8 +85,8 @@ class _MoreState extends State<More> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const Profile()),
+                          builder: (context) => const Profile(),
+                        ),
                       );
                     },
                     child: HelpForMore(
@@ -100,17 +95,14 @@ class _MoreState extends State<More> {
                       image: 'assets/images/User Icon.png',
                     ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const Regulation()),
+                          builder: (context) => const Regulation(),
+                        ),
                       );
                     },
                     child: HelpForMore(
@@ -119,101 +111,87 @@ class _MoreState extends State<More> {
                       image: 'assets/images/User Icon2.png',
                     ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const Setting()),
+                          builder: (context) => const Setting(),
+                        ),
                       );
                     },
                     child: HelpForMore(
-                        title: 'الاعدادات',
-                        note: 'تخصيص تفضيلات التطبيق',
-                        image: 'assets/images/setting-2.png'),
+                      title: 'الاعدادات',
+                      note: 'تخصيص تفضيلات التطبيق',
+                      image: 'assets/images/setting-2.png',
+                    ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const ContactUs()),
+                          builder: (context) => const ContactUs(),
+                        ),
                       );
                     },
                     child: HelpForMore(
-                        title: 'تواصل معنا',
-                        note: 'تواصل مع فريق الدعم والمساعدة',
-                        image: 'assets/images/headphone.png'),
+                      title: 'تواصل معنا',
+                      note: 'تواصل مع فريق الدعم والمساعدة',
+                      image: 'assets/images/headphone.png',
+                    ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
+                  Divider(height: 1, color: LineColors.line),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Faq()),
+                      );
+                    },
+                    child: HelpForMore(
+                      title: 'الاسئله الشائعة',
+                      note: 'إجابات على أبرز الاستفسارات',
+                      image: 'assets/images/message-question.png',
+                    ),
                   ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const Faq()),
+                          builder: (context) => const AboutUs(),
+                        ),
                       );
                     },
                     child: HelpForMore(
-                        title: 'الاسئله الشائعة',
-                        note: 'إجابات على أبرز الاستفسارات',
-                        image: 'assets/images/message-question.png'),
+                      title: 'عن التطبيق',
+                      note: 'تعرف على مميزات التطبيق وحقوق الاستخدام',
+                      image: 'assets/images/information.png',
+                    ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                            const AboutUs()),
-                      );
-                    },
-                    child: HelpForMore(
-                        title: 'عن التطبيق',
-                        note: 'تعرف على مميزات التطبيق وحقوق الاستخدام',
-                        image: 'assets/images/information.png'),
-                  ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   HelpForMore(
                     title: 'تسجيل خروج',
                     note: 'إنهاء الجلسة الحالية بأمان',
                     image: 'assets/images/logout.png',
-                     onTap: () async {
+                    onTap: () async {
                       final prefs = await SharedPreferences.getInstance();
                       await prefs.clear();
 
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(builder: (context) => const LogIn()),
-                            (route) => false,
+                        (route) => false,
                       );
                     },
                   ),
-
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -257,8 +235,8 @@ class SwitchStudentSheet extends StatelessWidget {
               const SizedBox(height: 20),
               ListTile(
                 leading: Container(
-                  height: MediaQuery.sizeOf(context).width*0.116,
-                  width: MediaQuery.sizeOf(context).width*0.116,
+                  height: MediaQuery.sizeOf(context).width * 0.116,
+                  width: MediaQuery.sizeOf(context).width * 0.116,
                   decoration: BoxDecoration(
                     color: NewColors.lightBG,
                     borderRadius: BorderRadius.circular(12),
@@ -308,5 +286,3 @@ class SwitchStudentSheet extends StatelessWidget {
     );
   }
 }
-
-

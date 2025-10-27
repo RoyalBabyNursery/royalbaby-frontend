@@ -1,32 +1,34 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/parent/home.dart';
-import 'package:royal/teacher/home/notifications_screen.dart';
-import 'package:royal/theme/colors.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:royalbabyapp/parent/home.dart';
+import 'package:royalbabyapp/riverpod_prov.dart';
+import 'package:royalbabyapp/teacher/home/notifications_screen.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 import '../../theme/fonts.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    // ✅ Correct Riverpod usage — you can now access providers
+    final civilId = ref.watch(civilIdProvider);
+
     return Scaffold(
       backgroundColor: NewColors.alwaysWhite,
       body: SafeArea(
+        maintainBottomViewPadding: true,
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
               Row(
                 children: [
                   Container(
@@ -37,35 +39,34 @@ class _HomeScreenState extends State<HomeScreen> {
                       color: NewColors.inputBG,
                     ),
                     padding: const EdgeInsets.all(6),
-                    child: Image.asset(
-                      'assets/images/Group.png',
-                    ),
+                    child: Image.asset('assets/images/Group.png'),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // 👇 Show Civil ID here dynamically
                       Text(
-                        'اهلا 👋  أ. عبد العزيز مصطفي',
+                        civilId != null && civilId.isNotEmpty
+                            ? 'اهلا 👋 $civilId'
+                            : 'اهلا 👋',
                         style: AppFonts.supHeading(color: NewColors.heading),
                       ),
-                      SizedBox(
-                        height: 5,
-                      ),
+                      const SizedBox(height: 5),
                       Text(
                         'G3, G4, G5, G6',
                         style: AppFonts.caption1(color: NewColors.caption),
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => const NotificationsScreen()),
+                        MaterialPageRoute(
+                          builder: (_) => const NotificationsScreen(),
+                        ),
                       );
                     },
                     child: Stack(
@@ -87,15 +88,19 @@ class _HomeScreenState extends State<HomeScreen> {
                           top: 5,
                           left: 18,
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
-                            decoration: BoxDecoration(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 4,
+                              vertical: 1,
+                            ),
+                            decoration: const BoxDecoration(
                               color: NewColors.primary400,
                               shape: BoxShape.circle,
                             ),
                             child: Text(
                               '4',
-                              style: AppFonts.body5(color: NewColors.alwaysWhite)
-                                  .copyWith(fontSize: 10),
+                              style: AppFonts.body5(
+                                color: NewColors.alwaysWhite,
+                              ).copyWith(fontSize: 10),
                             ),
                           ),
                         ),
@@ -104,13 +109,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 24,
-              ),
+              const SizedBox(height: 24),
               Row(
                 children: [
                   Expanded(
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -118,12 +121,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                       child: containerField(
-                          imagePath: 'assets/images/MedicalReports.png',
-                          label: 'تقارير يومية'),
+                        imagePath: 'assets/images/MedicalReports.png',
+                        label: 'تقارير يومية',
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -131,12 +135,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                       child: containerField(
-                          imagePath: 'assets/images/ResearchandStudyReport.png',
-                          label: 'تقارير فصلية'),
+                        imagePath: 'assets/images/ResearchandStudyReport.png',
+                        label: 'تقارير فصلية',
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -144,19 +149,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                       child: containerField(
-                          imagePath: 'assets/images/Addfilestobigfolder.png',
-                          label: 'تقارير اضافية'),
+                        imagePath: 'assets/images/Addfilestobigfolder.png',
+                        label: 'تقارير اضافية',
+                      ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                height: 24,
-              ),
+              const SizedBox(height: 24),
               Row(
                 children: [
                   Expanded(
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -164,12 +168,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                       child: containerField(
-                          imagePath: 'assets/images/ClassTimetable.png',
-                          label: 'الفصول'),
+                        imagePath: 'assets/images/ClassTimetable.png',
+                        label: 'الفصول',
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -177,12 +182,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                       child: containerField(
-                          imagePath: 'assets/images/PhotoDescription.png',
-                          label: 'الصور والفيدوهات'),
+                        imagePath: 'assets/images/PhotoDescription.png',
+                        label: 'الصور والفيدوهات',
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: InkWell(
+                    child: GestureDetector(
                       onTap: () {
                         Navigator.push(
                           context,
@@ -190,8 +196,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         );
                       },
                       child: containerField(
-                          imagePath: 'assets/images/MarketingMessagesorNotification.png',
-                          label: 'تعليقات اولياء الأمور'),
+                        imagePath:
+                            'assets/images/MarketingMessagesorNotification.png',
+                        label: 'تعليقات اولياء الأمور',
+                      ),
                     ),
                   ),
                 ],
@@ -210,16 +218,29 @@ class _HomeScreenState extends State<HomeScreen> {
           height: MediaQuery.sizeOf(context).height * 0.14,
           width: MediaQuery.sizeOf(context).width * .276,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(18),
             color: NewColors.grayBox,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.19),
+                blurRadius: 8,
+                spreadRadius: 1,
+                offset: const Offset(0, 2),
+              ),
+            ],
           ),
-          padding: const EdgeInsets.all(6),
-          child: Image.asset(
-            imagePath,
-            //fit: BoxFit.contain,
+          child: Center(
+            child: SizedBox(
+              height: 70,
+              width: 70,
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.contain,
+              ),
+            ),
           ),
         ),
-        const SizedBox(height: 6),
+        const SizedBox(height: 16),
         Text(
           label,
           style: AppFonts.body2(color: NewColors.supHeading),
@@ -228,5 +249,4 @@ class _HomeScreenState extends State<HomeScreen> {
       ],
     );
   }
-
 }

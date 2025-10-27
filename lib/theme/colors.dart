@@ -3,7 +3,7 @@ import 'dart:ui';
 class NewColors {
   // Text Colors
   static const Color textHeading = Color(0xFF0F0F0D);
-  static const Color caption = Color(0xFF858585);
+  static const Color caption = Color.fromARGB(140, 133, 133, 133);
   static const Color black = Color(0xFF000000);
   static const Color blue = Color(0xFF2774CC);
   static const Color blueBg = Color(0xFFF3F9FF);
@@ -26,8 +26,9 @@ class NewColors {
   static const Color redBG = Color(0xFFFCF3F2);
   static const Color red = Color(0xFFD4342A);
   static const Color label = Color(0xFF232323);
-}
 
+  static Color? get primary100 => null;
+}
 
 class LineColors {
   static const Color line = Color(0xFFF1F2F2);

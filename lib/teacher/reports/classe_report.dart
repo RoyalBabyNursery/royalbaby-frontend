@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/teacher/reports/classe_1.dart';
-import 'package:royal/teacher/reports/data_1.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 import '../../widget/text-field.dart';
@@ -53,11 +51,9 @@ class _ChooseStuState extends State<ClasseReport> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 36,
-              ),
+              SizedBox(height: 36),
               NameTextField(),
-              SizedBox(height: 18,),
+              SizedBox(height: 18),
               Expanded(
                 child: ListView.separated(
                   itemCount: 7,
@@ -65,12 +61,12 @@ class _ChooseStuState extends State<ClasseReport> {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Classe1(),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => Classe1(),
+                        //   ),
+                        // );
                       },
                       child: Container(
                         padding: const EdgeInsets.all(12),
@@ -90,21 +86,26 @@ class _ChooseStuState extends State<ClasseReport> {
                                     Row(
                                       children: [
                                         Image.asset(
-                                            'assets/images/IMAGE (2).png'),
-                                        SizedBox(
-                                          width: 10,
+                                          'assets/images/IMAGE (2).png',
                                         ),
+                                        SizedBox(width: 10),
                                         Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text('آدم محمود علي',
-                                                style: AppFonts.caption1(
-                                                    color: NewColors.heading)),
+                                            Text(
+                                              'آدم محمود علي',
+                                              style: AppFonts.caption1(
+                                                color: NewColors.heading,
+                                              ),
+                                            ),
                                             SizedBox(height: 4),
-                                            Text('3 سنوات',
-                                                style: AppFonts.body4(
-                                                    color: NewColors.body)),
+                                            Text(
+                                              '3 سنوات',
+                                              style: AppFonts.body4(
+                                                color: NewColors.body,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ],

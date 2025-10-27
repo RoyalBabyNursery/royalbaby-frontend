@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../../theme/fonts.dart';
 import '../../../widget/container.dart';
@@ -21,9 +21,7 @@ class _TermReportState extends State<TermReport> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.065,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
             Row(
               children: [
                 InkWell(
@@ -36,10 +34,7 @@ class _TermReportState extends State<TermReport> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -49,20 +44,19 @@ class _TermReportState extends State<TermReport> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'تفاصيل التقرير',
                   style: AppFonts.body2(color: NewColors.supHeading),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             DailyEvaluationCard(
-                day: 'الفصل الثاني', date: 'يناير - مارس 2025', evaluation: 'ممتاز'),
+              day: 'الفصل الثاني',
+              date: 'يناير - مارس 2025',
+              evaluation: 'ممتاز',
+            ),
             Expanded(
               child: ListView.separated(
                 itemCount: 5,
@@ -78,21 +72,26 @@ class _TermReportState extends State<TermReport> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('المهارات المعرفية',
-                            style: AppFonts.supHeading3(
-                                color: NewColors.supHeading)),
+                        Text(
+                          'المهارات المعرفية',
+                          style: AppFonts.supHeading3(
+                            color: NewColors.supHeading,
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('يتعرف على الأشكال الأساسية (دائرة، مربع)',
-                                  style: AppFonts.body3(color: NewColors.body)),
-                              SizedBox(
-                                height: 5,
+                              Text(
+                                'يتعرف على الأشكال الأساسية (دائرة، مربع)',
+                                style: AppFonts.body3(color: NewColors.body),
                               ),
-                              Text('يستجيب لاسمه وينتبه للتعليمات البسيطة',
-                                  style: AppFonts.body3(color: NewColors.body)),
+                              SizedBox(height: 5),
+                              Text(
+                                'يستجيب لاسمه وينتبه للتعليمات البسيطة',
+                                style: AppFonts.body3(color: NewColors.body),
+                              ),
                             ],
                           ),
                         ),
@@ -103,9 +102,10 @@ class _TermReportState extends State<TermReport> {
               ),
             ),
             TeacherNoteCard(
-                title: 'ملاحظات المعلمة',
-                note:
-                'لاحظنا تطورًا ملحوظًا في تفاعل الطفل مع أقرانه وقدرته على التعبير عن نفسه، وننصح بالاستمرار في تشجيعه على الحديث في المنزل')
+              title: 'ملاحظات المعلمة',
+              note:
+                  'لاحظنا تطورًا ملحوظًا في تفاعل الطفل مع أقرانه وقدرته على التعبير عن نفسه، وننصح بالاستمرار في تشجيعه على الحديث في المنزل',
+            ),
           ],
         ),
       ),

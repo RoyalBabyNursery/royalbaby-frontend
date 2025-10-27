@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 import '../../widget/text-field.dart';
@@ -13,13 +13,12 @@ class EditPhoto extends StatefulWidget {
 }
 
 class _EditPhotoState extends State<EditPhoto> {
-
   final TextEditingController civilIdController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold (
+    return Scaffold(
       backgroundColor: NewColors.alwaysWhite,
       body: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -56,31 +55,23 @@ class _EditPhotoState extends State<EditPhoto> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 24,
-            ),
-            Text(
-              'اسم المناسبة',
-              style: AppFonts.body2(color: NewColors.label),
-            ),
-            SizedBox(
-              height: 12,
-            ),
+            SizedBox(height: 24),
+            Text('اسم المناسبة', style: AppFonts.body2(color: NewColors.label)),
+            SizedBox(height: 12),
             CustomTextFieldWidget(
-                labelText: 'ادخل اسم المناسبة',
-                controller: civilIdController),
-            SizedBox(
-              height: 12,
+              labelText: 'ادخل اسم المناسبة',
+              controller: civilIdController,
             ),
+            SizedBox(height: 12),
             Text(
               'تاريخ المناسبة',
               style: AppFonts.body2(color: NewColors.label),
             ),
-            SizedBox(
-              height: 12,
-            ),
+            SizedBox(height: 12),
             CustomTextFieldWidget(
-                labelText: 'اختر التاريخ', controller: civilIdController),
+              labelText: 'اختر التاريخ',
+              controller: civilIdController,
+            ),
             Expanded(
               child: ListView.separated(
                 itemCount: 6,
@@ -103,22 +94,25 @@ class _EditPhotoState extends State<EditPhoto> {
                               children: [
                                 Row(
                                   children: [
-                                    Image.asset(
-                                        'assets/images/Image (1).png'),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
+                                    Image.asset('assets/images/Image (1).png'),
+                                    SizedBox(width: 10),
                                     Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text('100043.JPG',
-                                            style: AppFonts.supHeading3(
-                                                color: NewColors.blue)),
+                                        Text(
+                                          '100043.JPG',
+                                          style: AppFonts.supHeading3(
+                                            color: NewColors.blue,
+                                          ),
+                                        ),
                                         SizedBox(height: 4),
-                                        Text('342.KP',
-                                            style: AppFonts.body4(
-                                                color: NewColors.caption)),
+                                        Text(
+                                          '342.KP',
+                                          style: AppFonts.body4(
+                                            color: NewColors.caption,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ],
@@ -135,9 +129,12 @@ class _EditPhotoState extends State<EditPhoto> {
                 },
               ),
             ),
-            SizedBox(height: 12,),
-            Text('اضف ملفات اخري',style: AppFonts.supHeading3(color: NewColors.blue),),
-            SizedBox(height: 24,),
+            SizedBox(height: 12),
+            Text(
+              'اضف ملفات اخري',
+              style: AppFonts.supHeading3(color: NewColors.blue),
+            ),
+            SizedBox(height: 24),
             Container(
               height: MediaQuery.sizeOf(context).height * 0.057,
               width: MediaQuery.sizeOf(context).width,
@@ -146,10 +143,11 @@ class _EditPhotoState extends State<EditPhoto> {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Center(
-                  child: Text(
-                    'حفظ',
-                    style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
-                  )),
+                child: Text(
+                  'حفظ',
+                  style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
+                ),
+              ),
             ),
           ],
         ),

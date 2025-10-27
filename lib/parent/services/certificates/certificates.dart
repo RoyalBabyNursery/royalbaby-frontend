@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/parent/services/certificates/certificate_details.dart';
-import 'package:royal/theme/colors.dart';
-import '../../../theme/fonts.dart';
+import 'package:royalbabyapp/parent/services/certificates/certificate_details.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
+import '../../../theme/fonts.dart';
 
 class Certificates extends StatefulWidget {
   const Certificates({super.key});
@@ -21,9 +21,7 @@ class _CertificatesState extends State<Certificates> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.065,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
             Row(
               children: [
                 InkWell(
@@ -36,10 +34,7 @@ class _CertificatesState extends State<Certificates> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -49,16 +44,12 @@ class _CertificatesState extends State<Certificates> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'الشهادات',
                   style: AppFonts.body2(color: NewColors.supHeading),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
+                SizedBox(height: 20),
               ],
             ),
             Expanded(
@@ -71,8 +62,8 @@ class _CertificatesState extends State<Certificates> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const CertificateDetails()),
+                          builder: (context) => const CertificateDetails(),
+                        ),
                       );
                     },
                     child: Container(
@@ -93,21 +84,26 @@ class _CertificatesState extends State<Certificates> {
                                   Row(
                                     children: [
                                       Image.asset(
-                                          'assets/images/certificate.png'),
-                                      SizedBox(
-                                        width: 10,
+                                        'assets/images/certificate.png',
                                       ),
+                                      SizedBox(width: 10),
                                       Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          Text(' إنجاز الطفل في مرحلة الحضانة',
-                                              style: AppFonts.headingH6(
-                                                  color: NewColors.heading)),
+                                          Text(
+                                            ' إنجاز الطفل في مرحلة الحضانة',
+                                            style: AppFonts.headingH6(
+                                              color: NewColors.heading,
+                                            ),
+                                          ),
                                           SizedBox(height: 4),
-                                          Text('مارس 2025',
-                                              style: AppFonts.body4(
-                                                  color: NewColors.body)),
+                                          Text(
+                                            'مارس 2025',
+                                            style: AppFonts.body4(
+                                              color: NewColors.body,
+                                            ),
+                                          ),
                                         ],
                                       ),
                                     ],
@@ -115,12 +111,11 @@ class _CertificatesState extends State<Certificates> {
                                 ],
                               ),
                               Spacer(),
-                              Text('ممتاز',
-                                  style:
-                                  AppFonts.body4(color: NewColors.body)),
-                              SizedBox(
-                                width: 5,
+                              Text(
+                                'ممتاز',
+                                style: AppFonts.body4(color: NewColors.body),
                               ),
+                              SizedBox(width: 5),
                               Image.asset('assets/images/star.png'),
                             ],
                           ),
@@ -128,17 +123,19 @@ class _CertificatesState extends State<Certificates> {
                           Row(
                             children: [
                               Image.asset('assets/images/award.png'),
-                              SizedBox(
-                                width: 10,
+                              SizedBox(width: 10),
+                              Text(
+                                'النوع :',
+                                style: AppFonts.body4(color: NewColors.body),
                               ),
-                              Text('النوع :',
-                                  style:
-                                  AppFonts.body4(color: NewColors.body)),
-                              Text('مشاركه',
-                                  style: AppFonts.body3(
-                                      color: NewColors.supHeading)),
+                              Text(
+                                'مشاركه',
+                                style: AppFonts.body3(
+                                  color: NewColors.supHeading,
+                                ),
+                              ),
                               Spacer(),
-                              Image.asset('assets/images/Vector.png')
+                              Image.asset('assets/images/Vector.png'),
                             ],
                           ),
                         ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:royal/teacher/home/all_screen.dart';
+import 'package:royalbabyapp/teacher/home/all_screen.dart';
 
 import '../../theme/colors.dart';
 import '../../theme/fonts.dart';
@@ -38,10 +38,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -50,9 +47,15 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                Text('الإشعارات', style: AppFonts.body2(color: NewColors.supHeading)),
+                Text(
+                  'الإشعارات',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 const Spacer(),
-                Text('تحديد الكل كمقروء', style: AppFonts.body3(color: NewColors.blue)),
+                Text(
+                  'تحديد الكل كمقروء',
+                  style: AppFonts.body3(color: NewColors.blue),
+                ),
               ],
             ),
             const SizedBox(height: 24),
@@ -69,18 +72,27 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                     });
                   },
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 16,
+                      vertical: 10,
+                    ),
                     decoration: BoxDecoration(
-                      color: isSelected ? NewColors.primary400 : Colors.transparent,
+                      color: isSelected
+                          ? NewColors.primary400
+                          : Colors.transparent,
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(
-                        color: isSelected ? NewColors.primary400 : LineColors.border,
+                        color: isSelected
+                            ? NewColors.primary400
+                            : LineColors.border,
                       ),
                     ),
                     child: Text(
                       tabs[index],
                       style: AppFonts.body3(
-                        color: isSelected ? NewColors.alwaysWhite : NewColors.body,
+                        color: isSelected
+                            ? NewColors.alwaysWhite
+                            : NewColors.body,
                       ),
                     ),
                   ),
@@ -94,7 +106,7 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                 children: const [
                   AllScreen(),
                   //AdminNotificationsPage(),
-                 // ReportsNotificationsPage(),
+                  // ReportsNotificationsPage(),
                   //ParentsNotificationsPage(),
                 ],
               ),

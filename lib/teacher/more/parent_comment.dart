@@ -1,9 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/teacher/reports/choose_stu.dart';
-import 'package:royal/teacher/reports/classe_report.dart';
-import 'package:royal/teacher/reports/more_reports.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+
 import '../../theme/fonts.dart';
 import '../../widget/text-field.dart';
 
@@ -22,7 +20,7 @@ class _ReportsScreenState extends State<ParentComment> {
     Column(
       children: [
         NameTextField(),
-        SizedBox(height: 12,),
+        SizedBox(height: 12),
         Expanded(
           child: ListView.builder(
             itemCount: 4,
@@ -55,46 +53,64 @@ class _ReportsScreenState extends State<ParentComment> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('آدم محمود علي',
-                                  style: AppFonts.caption1(color: NewColors.heading)),
+                              Text(
+                                'آدم محمود علي',
+                                style: AppFonts.caption1(
+                                  color: NewColors.heading,
+                                ),
+                              ),
                               const SizedBox(height: 2),
-                              Text('17 مايو - 09:22 ص',
-                                  style: AppFonts.body4(color: NewColors.body)),
+                              Text(
+                                '17 مايو - 09:22 ص',
+                                style: AppFonts.body4(color: NewColors.body),
+                              ),
                             ],
                           ),
                         ),
-                        const SizedBox(width: 8), // مهم لتفصل بين Expanded و Text
+                        const SizedBox(
+                          width: 8,
+                        ), // مهم لتفصل بين Expanded و Text
                         ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 90), // أو أقل حسب التصميم
+                          constraints: const BoxConstraints(
+                            maxWidth: 90,
+                          ), // أو أقل حسب التصميم
                           child: Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12,
+                              vertical: 4,
+                            ),
                             decoration: BoxDecoration(
                               color: NewColors.greenBG,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(color: LineColors.greenStroke),
                             ),
                             child: FittedBox(
-                              child: Text('تم الرد',
-                                  style: AppFonts.body4(color: NewColors.green)),
+                              child: Text(
+                                'تم الرد',
+                                style: AppFonts.body4(color: NewColors.green),
+                              ),
                             ),
                           ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 12),
-                    Text('تعليق ولي الأمر',
-                        style: AppFonts.body4(color: NewColors.body)),
-                    const SizedBox(height: 4),
-                    Text('هل ممكن إرسال زجاجة الماء مع آدم يومياً؟',
-                        style: AppFonts.caption2(color: NewColors.supHeading)),
-                    SizedBox(height: 12,),
-                    Divider(
-                      height: 1,
-                      color: LineColors.line,
+                    Text(
+                      'تعليق ولي الأمر',
+                      style: AppFonts.body4(color: NewColors.body),
                     ),
-                    SizedBox(height: 12,),
-                    Text('رد الإدارة',
-                        style: AppFonts.body4(color: NewColors.body)),
+                    const SizedBox(height: 4),
+                    Text(
+                      'هل ممكن إرسال زجاجة الماء مع آدم يومياً؟',
+                      style: AppFonts.caption2(color: NewColors.supHeading),
+                    ),
+                    SizedBox(height: 12),
+                    Divider(height: 1, color: LineColors.line),
+                    SizedBox(height: 12),
+                    Text(
+                      'رد الإدارة',
+                      style: AppFonts.body4(color: NewColors.body),
+                    ),
                     const SizedBox(height: 4),
                     Text(
                       'شكرًا على الملاحظة، تم تنبيه المعلمات وسيتم التأكيد يوميًا على وجود الزجاجة مع آدم.',
@@ -166,7 +182,9 @@ class _ReportsScreenState extends State<ParentComment> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 10),
+                          horizontal: 16,
+                          vertical: 10,
+                        ),
                         decoration: BoxDecoration(
                           color: isSelected
                               ? NewColors.primary400

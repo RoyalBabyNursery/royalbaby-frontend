@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
+
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 
@@ -56,7 +57,9 @@ class _AllScreenState extends State<AllScreen> {
                           children: [
                             Text(
                               'تم فتح تقييمات الفصل الدراسي الثاني، يُرجى البدء في إدخال البيانات',
-                              style: AppFonts.supHeading4(color: NewColors.supHeading),
+                              style: AppFonts.supHeading4(
+                                color: NewColors.supHeading,
+                              ),
                             ),
                             const SizedBox(height: 5),
                             Text(
@@ -74,7 +77,6 @@ class _AllScreenState extends State<AllScreen> {
                       ),
                     ],
                   ),
-
                 );
               },
             ),
@@ -84,7 +86,6 @@ class _AllScreenState extends State<AllScreen> {
     );
   }
 }
-
 
 class _NotificationDetailsSheet extends StatelessWidget {
   const _NotificationDetailsSheet();
@@ -130,35 +131,48 @@ class _NotificationDetailsSheet extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
 
-                Text('📝 ملاحظات الإدخال:',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                Text(
+                  '📝 ملاحظات الإدخال:',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 const SizedBox(height: 12),
                 Text(
-                    '• يتم تقييم كل طالب بناءً على المعايير المعتمدة في النظام (المشاركة، المهارات، السلوك، التفاعل).',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                  '• يتم تقييم كل طالب بناءً على المعايير المعتمدة في النظام (المشاركة، المهارات، السلوك، التفاعل).',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 Text(
-                    '• يرجى التأكد من حفظ كل إدخال قبل الانتقال لطالب آخر.',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
-                Text('• يمكن حفظ التقييمات كمسودة في حال عدم الانتهاء.',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                  '• يرجى التأكد من حفظ كل إدخال قبل الانتقال لطالب آخر.',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
+                Text(
+                  '• يمكن حفظ التقييمات كمسودة في حال عدم الانتهاء.',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
 
                 const SizedBox(height: 24),
-                Text('⏰ الموعد النهائي للإدخال:',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                Text(
+                  '⏰ الموعد النهائي للإدخال:',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 const SizedBox(height: 12),
                 Text(
-                    '• الخميس 30 مايو 2025 – الساعة 4:00 مساءً.',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                  '• الخميس 30 مايو 2025 – الساعة 4:00 مساءً.',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 const SizedBox(height: 24),
-                Text('🧭 ملاحظات إضافية:',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                Text(
+                  '🧭 ملاحظات إضافية:',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 const SizedBox(height: 12),
                 Text(
-                    '• التقييم متاح فقط للطلاب المسجلين تحت إشرافك.',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                  '• التقييم متاح فقط للطلاب المسجلين تحت إشرافك.',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 Text(
-                    '• في حال وجود استفسارات، يرجى التواصل مع مسؤول النظام أو الإدارة.',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                  '• في حال وجود استفسارات، يرجى التواصل مع مسؤول النظام أو الإدارة.',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
               ],
             ),
           ),

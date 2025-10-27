@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/widget/container.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/widget/container.dart';
 
 import '../../theme/fonts.dart';
 
@@ -21,9 +21,7 @@ class _FaqState extends State<Faq> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.07,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.07),
             Row(
               children: [
                 InkWell(
@@ -36,10 +34,7 @@ class _FaqState extends State<Faq> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -49,32 +44,25 @@ class _FaqState extends State<Faq> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'الاسئله الشائعة',
                   style: AppFonts.body2(color: NewColors.supHeading),
                 ),
               ],
             ),
-            SizedBox(height: 12,),
-            FaqHelp(title: 'نسيت كلمة المرور، ماذا أفعل؟',  ),
-            Divider(
-              height: 1,
-              color: LineColors.line,
-            ),
+            SizedBox(height: 12),
+            FaqHelp(title: 'نسيت كلمة المرور، ماذا أفعل؟'),
+            Divider(height: 1, color: LineColors.line),
             FaqHelp(title: 'كيف يمكنني متابعة نشاط طفلي داخل الحضانة؟'),
-            Divider(
-              height: 1,
-              color: LineColors.line,
+            Divider(height: 1, color: LineColors.line),
+            FaqHelp(
+              title: 'هل يمكنني التواصل مع إدارة الحضانة مباشرة من التطبيق؟',
             ),
-            FaqHelp(title: 'هل يمكنني التواصل مع إدارة الحضانة مباشرة من التطبيق؟'),
-            Divider(
-              height: 1,
-              color: LineColors.line,
+            Divider(height: 1, color: LineColors.line),
+            FaqHelp(
+              title: 'ظهرت لي رسالة "الطفل مسجل بالفعل ولا يمكن تسجيل الدخول"؟',
             ),
-            FaqHelp(title: 'ظهرت لي رسالة "الطفل مسجل بالفعل ولا يمكن تسجيل الدخول"؟')
           ],
         ),
       ),

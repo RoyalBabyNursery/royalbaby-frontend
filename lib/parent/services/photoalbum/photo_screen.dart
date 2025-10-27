@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../../theme/fonts.dart';
 
@@ -20,9 +20,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.065,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
             Row(
               children: [
                 InkWell(
@@ -35,10 +33,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -48,9 +43,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'تعلم آداب الدعاء والوضوء',
                   style: AppFonts.body2(color: NewColors.supHeading),

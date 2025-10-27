@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/teacher/classes/add_events.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/teacher/classes/add_events.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 import '../../widget/text-field.dart';
@@ -44,12 +44,15 @@ class _AddEventState extends State<AddEvent> {
                               width: MediaQuery.sizeOf(context).width * 0.091,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8),
-                                border:
-                                Border.all(color: LineColors.border, width: 1),
+                                border: Border.all(
+                                  color: LineColors.border,
+                                  width: 1,
+                                ),
                               ),
                               child: Image.asset(
                                 'assets/images/Dropdown Icon.png',
-                                height: MediaQuery.sizeOf(context).width * 0.045,
+                                height:
+                                    MediaQuery.sizeOf(context).width * 0.045,
                                 width: MediaQuery.sizeOf(context).width * 0.045,
                                 fit: BoxFit.contain,
                               ),
@@ -62,61 +65,61 @@ class _AddEventState extends State<AddEvent> {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 24,
-                      ),
+                      SizedBox(height: 24),
                       Text(
                         'اسم المناسبة',
                         style: AppFonts.body2(color: NewColors.label),
                       ),
-                      SizedBox(
-                        height: 12,
-                      ),
+                      SizedBox(height: 12),
                       CustomTextFieldWidget(
-                          labelText: 'ادخل اسم المناسبة',
-                          controller: civilIdController),
-                      SizedBox(
-                        height: 12,
+                        labelText: 'ادخل اسم المناسبة',
+                        controller: civilIdController,
                       ),
+                      SizedBox(height: 12),
                       Text(
                         'تاريخ المناسبة',
                         style: AppFonts.body2(color: NewColors.label),
                       ),
-                      SizedBox(
-                        height: 12,
-                      ),
+                      SizedBox(height: 12),
                       CustomTextFieldWidget(
-                          labelText: 'اختر التاريخ', controller: civilIdController),
-                      SizedBox(
-                        height: 24,
+                        labelText: 'اختر التاريخ',
+                        controller: civilIdController,
                       ),
+                      SizedBox(height: 24),
                       TextField(
                         maxLines: 3,
                         decoration: InputDecoration(
                           hintText: 'اضف الوصف هنا...',
-                          hintStyle: AppFonts.body2(color: NewColors.placeHolder),
+                          hintStyle: AppFonts.body2(
+                            color: NewColors.placeHolder,
+                          ),
                           filled: true,
                           fillColor: NewColors.inputBG,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: LineColors.inputBorder),
+                            borderSide: BorderSide(
+                              color: LineColors.inputBorder,
+                            ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: LineColors.inputBorder, width: 1.5),
+                            borderSide: BorderSide(
+                              color: LineColors.inputBorder,
+                              width: 1.5,
+                            ),
                           ),
                         ),
                       ),
-                      SizedBox(
-                        height: 24,
-                      ),
+                      SizedBox(height: 24),
                       GestureDetector(
                         onTap: () {
                           showModalBottomSheet(
                             context: context,
                             isScrollControlled: true,
                             shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(24),
+                              ),
                             ),
                             builder: (_) => const UploadOptionsSheet(),
                           );
@@ -132,16 +135,25 @@ class _AddEventState extends State<AddEvent> {
                           child: Column(
                             children: [
                               const SizedBox(height: 32),
-                              Image.asset('assets/images/Upload Instructions.png'),
+                              Image.asset(
+                                'assets/images/Upload Instructions.png',
+                              ),
                               const SizedBox(height: 4),
-                              Text('اضغط للتحميل', style: AppFonts.supHeading3(color: NewColors.blue)),
+                              Text(
+                                'اضغط للتحميل',
+                                style: AppFonts.supHeading3(
+                                  color: NewColors.blue,
+                                ),
+                              ),
                               const SizedBox(height: 4),
-                              Text('JPG, PNG, MP4, MP3', style: AppFonts.body4(color: NewColors.caption)),
+                              Text(
+                                'JPG, PNG, MP4, MP3',
+                                style: AppFonts.body4(color: NewColors.caption),
+                              ),
                             ],
                           ),
                         ),
                       ),
-
                     ],
                   ),
                 ),
@@ -155,10 +167,11 @@ class _AddEventState extends State<AddEvent> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
-                    child: Text(
-                      'رفع',
-                      style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
-                    )),
+                  child: Text(
+                    'رفع',
+                    style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
+                  ),
+                ),
               ),
             ],
           ),
@@ -167,7 +180,6 @@ class _AddEventState extends State<AddEvent> {
     );
   }
 }
-
 
 class UploadOptionsSheet extends StatelessWidget {
   const UploadOptionsSheet({super.key});
@@ -190,10 +202,17 @@ class UploadOptionsSheet extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () => Navigator.pop(context),
-                    child: Image.asset('assets/images/Close Button Container.png', height: 24, width: 24),
+                    child: Image.asset(
+                      'assets/images/Close Button Container.png',
+                      height: 24,
+                      width: 24,
+                    ),
                   ),
                   const SizedBox(width: 12),
-                  Text('نوع الملف', style: AppFonts.supHeading2(color: NewColors.heading)),
+                  Text(
+                    'نوع الملف',
+                    style: AppFonts.supHeading2(color: NewColors.heading),
+                  ),
                 ],
               ),
               const SizedBox(height: 24),
@@ -211,13 +230,19 @@ class UploadOptionsSheet extends StatelessWidget {
                 },
               ),
               ListTile(
-                title: Text('فتح المعرض', style: AppFonts.body2(color: NewColors.blue)),
+                title: Text(
+                  'فتح المعرض',
+                  style: AppFonts.body2(color: NewColors.blue),
+                ),
                 onTap: () {
                   Navigator.pop(context);
                 },
               ),
               ListTile(
-                title: Text('رفع ملف', style: AppFonts.body2(color: NewColors.blue)),
+                title: Text(
+                  'رفع ملف',
+                  style: AppFonts.body2(color: NewColors.blue),
+                ),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -227,6 +252,5 @@ class UploadOptionsSheet extends StatelessWidget {
         ),
       ),
     );
-
   }
 }

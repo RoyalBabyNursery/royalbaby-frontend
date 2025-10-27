@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:royal/model/parent_kid.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
-import 'home.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:royalbabyapp/riverpod_prov.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
+
 import 'more/more.dart';
 import 'notifications.dart';
 import 'services/services.dart';
 
-class MainNavigation extends StatefulWidget {
-  final ParentKid selectedKid;
-
-  const MainNavigation({super.key, required this.selectedKid});
+class MainNavigation extends ConsumerStatefulWidget {
+  const MainNavigation({super.key});
 
   @override
-  State<MainNavigation> createState() => _MainNavigationState();
+  ConsumerState<MainNavigation> createState() => _MainNavigationState();
 }
 
-class _MainNavigationState extends State<MainNavigation> {
+class _MainNavigationState extends ConsumerState<MainNavigation> {
   int _selectedIndex = 0;
 
   late List<Widget> _pages;
@@ -24,11 +23,10 @@ class _MainNavigationState extends State<MainNavigation> {
   @override
   void initState() {
     super.initState();
-    _pages = [
-      Home(selectedKid: widget.selectedKid),
-      const Services(),
-      const Notifications(),
-      const More(),
+    _pages = const [
+      Services(),
+      Notifications(),
+      More(),
     ];
   }
 
@@ -40,10 +38,14 @@ class _MainNavigationState extends State<MainNavigation> {
 
   @override
   Widget build(BuildContext context) {
+    final selectedKid = ref.watch(selectedKidProvider);
+
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        body: SafeArea(child: _pages[_selectedIndex]),
+        body: SafeArea(
+          child: _pages[_selectedIndex],
+        ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           backgroundColor: NewColors.alwaysWhite,
@@ -59,7 +61,9 @@ class _MainNavigationState extends State<MainNavigation> {
                 'assets/images/Home.png',
                 width: MediaQuery.sizeOf(context).width * 0.065,
                 height: MediaQuery.sizeOf(context).width * 0.065,
-                color: _selectedIndex == 0 ? NewColors.primary500 : NewColors.caption,
+                color: _selectedIndex == 0
+                    ? NewColors.primary500
+                    : NewColors.caption,
               ),
               label: 'الرئيسيه',
             ),
@@ -68,7 +72,9 @@ class _MainNavigationState extends State<MainNavigation> {
                 'assets/images/Menu.png',
                 width: MediaQuery.sizeOf(context).width * 0.065,
                 height: MediaQuery.sizeOf(context).width * 0.065,
-                color: _selectedIndex == 1 ? NewColors.primary500 : NewColors.caption,
+                color: _selectedIndex == 1
+                    ? NewColors.primary500
+                    : NewColors.caption,
               ),
               label: 'الخدمات',
             ),
@@ -77,7 +83,9 @@ class _MainNavigationState extends State<MainNavigation> {
                 'assets/images/Notification.png',
                 width: MediaQuery.sizeOf(context).width * 0.065,
                 height: MediaQuery.sizeOf(context).width * 0.065,
-                color: _selectedIndex == 2 ? NewColors.primary500 : NewColors.caption,
+                color: _selectedIndex == 2
+                    ? NewColors.primary500
+                    : NewColors.caption,
               ),
               label: 'الاشعارات',
             ),
@@ -86,7 +94,9 @@ class _MainNavigationState extends State<MainNavigation> {
                 'assets/images/More.png',
                 width: MediaQuery.sizeOf(context).width * 0.065,
                 height: MediaQuery.sizeOf(context).width * 0.065,
-                color: _selectedIndex == 3 ? NewColors.primary500 : NewColors.caption,
+                color: _selectedIndex == 3
+                    ? NewColors.primary500
+                    : NewColors.caption,
               ),
               label: 'المزيد',
             ),

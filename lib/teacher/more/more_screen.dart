@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:royalbabyapp/screen/log_in.dart';
+import 'package:royalbabyapp/teacher/more/about_us_screen.dart';
+import 'package:royalbabyapp/teacher/more/parent_comment.dart';
+import 'package:royalbabyapp/teacher/more/profile_screen.dart';
+import 'package:royalbabyapp/teacher/more/setting_screen.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
+import 'package:royalbabyapp/widget/container.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:royal/screen/log_in.dart';
-import 'package:royal/teacher/more/about_us_screen.dart';
-import 'package:royal/teacher/more/parent_comment.dart';
-import 'package:royal/teacher/more/profile_screen.dart';
-import 'package:royal/teacher/more/setting_screen.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
-import 'package:royal/widget/container.dart';
 
 class MoreScreen extends StatefulWidget {
   const MoreScreen({super.key});
@@ -37,20 +37,17 @@ class _MoreState extends State<MoreScreen> {
                     height: MediaQuery.sizeOf(context).width * 0.18,
                     width: MediaQuery.sizeOf(context).width * 0.18,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        color: NewColors.bg),
+                      borderRadius: BorderRadius.circular(12),
+                      color: NewColors.bg,
+                    ),
                     child: Image.asset('assets/images/user.png'),
                   ),
-                  SizedBox(
-                    height: 8,
-                  ),
+                  SizedBox(height: 8),
                   Text(
                     'أ. عبد العزيز مصطفي',
                     style: AppFonts.headingH5(color: NewColors.heading),
                   ),
-                  SizedBox(
-                    height: 8,
-                  ),
+                  SizedBox(height: 8),
                   Text(
                     'G3, G4, G5, G6',
                     style: AppFonts.body2(color: NewColors.caption),
@@ -67,8 +64,8 @@ class _MoreState extends State<MoreScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const ProfileScreen()),
+                          builder: (context) => const ProfileScreen(),
+                        ),
                       );
                     },
                     child: HelpForMore(
@@ -77,17 +74,14 @@ class _MoreState extends State<MoreScreen> {
                       image: 'assets/images/User Icon.png',
                     ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const ParentComment()),
+                          builder: (context) => const ParentComment(),
+                        ),
                       );
                     },
                     child: HelpForMore(
@@ -96,53 +90,43 @@ class _MoreState extends State<MoreScreen> {
                       image: 'assets/images/User Icon5.png',
                     ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const SettingScreen()),
+                            builder: (context) => const SettingScreen()),
                       );
                     },
                     child: HelpForMore(
-                        title: 'الاعدادات',
-                        note: 'تخصيص تفضيلات التطبيق',
-                        image: 'assets/images/setting-2.png'),
+                      title: 'الاعدادات',
+                      note: 'تخصيص تفضيلات التطبيق',
+                      image: 'assets/images/setting-2.png',
+                    ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                            const AboutUsScreen()),
+                          builder: (context) => const AboutUsScreen(),
+                        ),
                       );
                     },
                     child: HelpForMore(
-                        title: 'عن التطبيق',
-                        note: 'تعرف على مميزات التطبيق وحقوق الاستخدام',
-                        image: 'assets/images/information.png'),
+                      title: 'عن التطبيق',
+                      note: 'تعرف على مميزات التطبيق وحقوق الاستخدام',
+                      image: 'assets/images/information.png',
+                    ),
                   ),
-                  Divider(
-                    height: 1,
-                    color: LineColors.line,
-                  ),
+                  Divider(height: 1, color: LineColors.line),
                   InkWell(
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                            const LogIn()),
+                        MaterialPageRoute(builder: (context) => const LogIn()),
                       );
                     },
                     child: HelpForMore(
@@ -155,16 +139,17 @@ class _MoreState extends State<MoreScreen> {
 
                         Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => const LogIn()),
-                              (route) => false,
+                          MaterialPageRoute(
+                            builder: (context) => const LogIn(),
+                          ),
+                          (route) => false,
                         );
                       },
                     ),
-
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -208,8 +193,8 @@ class SwitchStudentSheet extends StatelessWidget {
               const SizedBox(height: 20),
               ListTile(
                 leading: Container(
-                  height: MediaQuery.sizeOf(context).width*0.116,
-                  width: MediaQuery.sizeOf(context).width*0.116,
+                  height: MediaQuery.sizeOf(context).width * 0.116,
+                  width: MediaQuery.sizeOf(context).width * 0.116,
                   decoration: BoxDecoration(
                     color: NewColors.lightBG,
                     borderRadius: BorderRadius.circular(12),
@@ -259,5 +244,3 @@ class SwitchStudentSheet extends StatelessWidget {
     );
   }
 }
-
-

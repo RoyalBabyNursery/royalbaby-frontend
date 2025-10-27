@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/teacher/reports/data_1.dart';
-import 'package:royal/teacher/reports/more_deti.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/teacher/reports/more_deti.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 import '../../widget/text-field.dart';
@@ -53,11 +52,9 @@ class _ChooseStuState extends State<MoreReports> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: 36,
-              ),
+              SizedBox(height: 36),
               NameTextField(),
-              SizedBox(height: 18,),
+              SizedBox(height: 18),
               Expanded(
                 child: ListView.separated(
                   itemCount: 10,
@@ -67,9 +64,7 @@ class _ChooseStuState extends State<MoreReports> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => MoreDeti(),
-                          ),
+                          MaterialPageRoute(builder: (context) => MoreDeti()),
                         );
                       },
                       child: Container(
@@ -90,21 +85,26 @@ class _ChooseStuState extends State<MoreReports> {
                                     Row(
                                       children: [
                                         Image.asset(
-                                            'assets/images/IMAGE (2).png'),
-                                        SizedBox(
-                                          width: 10,
+                                          'assets/images/IMAGE (2).png',
                                         ),
+                                        SizedBox(width: 10),
                                         Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: [
-                                            Text('آدم محمود علي',
-                                                style: AppFonts.caption1(
-                                                    color: NewColors.heading)),
+                                            Text(
+                                              'آدم محمود علي',
+                                              style: AppFonts.caption1(
+                                                color: NewColors.heading,
+                                              ),
+                                            ),
                                             SizedBox(height: 4),
-                                            Text('3 سنوات',
-                                                style: AppFonts.body4(
-                                                    color: NewColors.body)),
+                                            Text(
+                                              '3 سنوات',
+                                              style: AppFonts.body4(
+                                                color: NewColors.body,
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../teacher/nave_bar.dart';
 import 'log_in.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -29,7 +30,7 @@ class _SplachScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child:  Image.asset(
+        child: Image.asset(
           'assets/images/royal baby logo.png',
           width: screenHeight * 0.22,
           height: screenHeight * 0.22,

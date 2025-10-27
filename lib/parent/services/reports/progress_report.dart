@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../../theme/fonts.dart';
 import '../../../widget/container.dart';
@@ -21,9 +21,7 @@ class _TermReportState extends State<ProgressReport> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.065,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
             Row(
               children: [
                 InkWell(
@@ -36,10 +34,7 @@ class _TermReportState extends State<ProgressReport> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -49,22 +44,19 @@ class _TermReportState extends State<ProgressReport> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'تفاصيل التقرير',
                   style: AppFonts.body2(color: NewColors.supHeading),
                 ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             DailyEvaluationCard(
-                day: 'الفتره الاولي',
-                date: 'من 1 مارس 25 إلى 15 أبريل 25',
-                evaluation: 'جيد جدا'),
+              day: 'الفتره الاولي',
+              date: 'من 1 مارس 25 إلى 15 أبريل 25',
+              evaluation: 'جيد جدا',
+            ),
             Expanded(
               child: ListView.separated(
                 itemCount: 5,
@@ -80,22 +72,26 @@ class _TermReportState extends State<ProgressReport> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('المهارات المعرفية',
-                            style: AppFonts.supHeading3(
-                                color: NewColors.supHeading)),
+                        Text(
+                          'المهارات المعرفية',
+                          style: AppFonts.supHeading3(
+                            color: NewColors.supHeading,
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text('يتعرف على الأشكال الأساسية (دائرة، مربع)',
-                                  style: AppFonts.body3(color: NewColors.body)),
-                              SizedBox(
-                                height: 5,
-                              ),
                               Text(
-                                  'يتفاعل مع القصص القصيرة ويجيب على الأسئلة البسيطة',
-                                  style: AppFonts.body3(color: NewColors.body)),
+                                'يتعرف على الأشكال الأساسية (دائرة، مربع)',
+                                style: AppFonts.body3(color: NewColors.body),
+                              ),
+                              SizedBox(height: 5),
+                              Text(
+                                'يتفاعل مع القصص القصيرة ويجيب على الأسئلة البسيطة',
+                                style: AppFonts.body3(color: NewColors.body),
+                              ),
                             ],
                           ),
                         ),
@@ -106,9 +102,10 @@ class _TermReportState extends State<ProgressReport> {
               ),
             ),
             TeacherNoteCard(
-                title: 'ملاحظات المعلمة العامة',
-                note:
-                    'الطفل أبدى تحسنًا ملحوظًا في التواصل مع زملائه والانخراط في الأنشطة الجماعية. ننصح بمواصلة دعم مهاراته اللغوية من خلال التحدث معه في المنزل وقراءة القصص')
+              title: 'ملاحظات المعلمة العامة',
+              note:
+                  'الطفل أبدى تحسنًا ملحوظًا في التواصل مع زملائه والانخراط في الأنشطة الجماعية. ننصح بمواصلة دعم مهاراته اللغوية من خلال التحدث معه في المنزل وقراءة القصص',
+            ),
           ],
         ),
       ),
