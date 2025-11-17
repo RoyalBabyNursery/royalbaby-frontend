@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/parent/nav-bar.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
+
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
 
 import 'home.dart';
 
@@ -39,22 +39,23 @@ class _ChooseKidState extends State<ChooseKid> {
                 child: ListView.separated(
                   itemCount: 2,
                   separatorBuilder: (_, __) => Divider(
-                    height: MediaQuery.sizeOf(context).height*.06,
+                    height: MediaQuery.sizeOf(context).height * .06,
                     color: LineColors.line,
                     thickness: 1,
                   ),
-
                   itemBuilder: (context, index) {
-                    String name = index == 0 ? 'احمد ابراهيم عبدالله' : 'مريم ابراهيم عبدالله';
+                    String name = index == 0
+                        ? 'احمد ابراهيم عبدالله'
+                        : 'مريم ابراهيم عبدالله';
                     String level = index == 0 ? 'G4' : 'G2';
                     String nursery = 'حضانة رويال بيبي';
 
                     return InkWell(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const MainNavigation()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => const MainNavigation()),
+                        // );
                       },
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,10 +63,12 @@ class _ChooseKidState extends State<ChooseKid> {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Container(
-                              height: MediaQuery.sizeOf(context).width*0.117,
-                              width: MediaQuery.sizeOf(context).width*0.117,
-                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(12),
-                                color: NewColors.inputBG,),
+                              height: MediaQuery.sizeOf(context).width * 0.117,
+                              width: MediaQuery.sizeOf(context).width * 0.117,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                color: NewColors.inputBG,
+                              ),
                               padding: const EdgeInsets.all(6),
                               child: Image.asset(
                                 'assets/images/Group.png',
@@ -81,12 +84,16 @@ class _ChooseKidState extends State<ChooseKid> {
                                   children: [
                                     Text(
                                       name,
-                                      style: AppFonts.supHeading(color: NewColors.supHeading),
+                                      style: AppFonts.supHeading(
+                                          color: NewColors.supHeading),
                                     ),
-                                    SizedBox(width: 2,),
+                                    SizedBox(
+                                      width: 2,
+                                    ),
                                     Text(
                                       '($level)',
-                                      style: AppFonts.body3(color: NewColors.body),
+                                      style:
+                                          AppFonts.body3(color: NewColors.body),
                                     ),
                                   ],
                                 ),
@@ -99,13 +106,12 @@ class _ChooseKidState extends State<ChooseKid> {
                             ),
                           ),
                           const SizedBox(width: 10),
-                           Image.asset(
+                          Image.asset(
                             'assets/images/Vector.png',
-                            width: MediaQuery.sizeOf(context).width*0.04,
-                            height: MediaQuery.sizeOf(context).width*0.04,
+                            width: MediaQuery.sizeOf(context).width * 0.04,
+                            height: MediaQuery.sizeOf(context).width * 0.04,
                             color: Colors.grey, // اختياري
                           ),
-
                         ],
                       ),
                     );

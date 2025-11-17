@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
 
 class ToiletOptionSelector extends StatefulWidget {
   final String initialValue;
@@ -57,9 +57,6 @@ class _ToiletOptionSelectorState extends State<ToiletOptionSelector> {
     );
   }
 }
-
-
-
 
 class BehaviorOptionSelector extends StatefulWidget {
   final String initialValue;

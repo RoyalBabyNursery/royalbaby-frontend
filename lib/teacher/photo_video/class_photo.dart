@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/teacher/photo_video/add_photos.dart';
-import 'package:royal/teacher/photo_video/photos.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/teacher/photo_video/add_photos.dart';
+import 'package:royalbabyapp/teacher/photo_video/photos.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 
@@ -55,7 +55,9 @@ class _ClassPhotoState extends State<ClassPhoto> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const AddPhotos()),
+                      MaterialPageRoute(
+                        builder: (context) => const AddPhotos(),
+                      ),
                     );
                   },
                   child: Container(
@@ -118,7 +120,9 @@ class _ClassPhotoState extends State<ClassPhoto> {
                         const SizedBox(height: 6),
                         Text(
                           'احتفال الاجازة',
-                          style: AppFonts.supHeading4(color: NewColors.supHeading),
+                          style: AppFonts.supHeading4(
+                            color: NewColors.supHeading,
+                          ),
                         ),
                         const SizedBox(height: 4),
                         Text(
@@ -130,7 +134,7 @@ class _ClassPhotoState extends State<ClassPhoto> {
                   );
                 },
               ),
-            )
+            ),
           ],
         ),
       ),

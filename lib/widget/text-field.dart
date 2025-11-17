@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:royal/theme/fonts.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
 
 class CustomTextFieldWidget extends StatefulWidget {
   final String labelText;
@@ -18,7 +18,6 @@ class CustomTextFieldWidget extends StatefulWidget {
   State<CustomTextFieldWidget> createState() => _CustomTextFieldWidgetState();
 }
 
-
 class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
   bool _obscure = true;
 
@@ -29,10 +28,7 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
       decoration: BoxDecoration(
         color: NewColors.inputBG,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(
-          color: NewColors.inputBorder,
-          width: 1,
-        ),
+        border: Border.all(color: NewColors.inputBorder, width: 1),
       ),
       alignment: Alignment.center,
       child: Row(
@@ -44,7 +40,10 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
               textAlign: TextAlign.right,
               style: AppFonts.body2(color: NewColors.black),
               decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 0,
+                ),
                 hintText: widget.labelText,
                 hintStyle: AppFonts.body2(color: NewColors.placeHolder),
                 border: InputBorder.none,
@@ -68,7 +67,6 @@ class _CustomTextFieldWidgetState extends State<CustomTextFieldWidget> {
     );
   }
 }
-
 
 class InfoRow extends StatelessWidget {
   final String label;
@@ -94,23 +92,16 @@ class InfoRow extends StatelessWidget {
   }
 }
 
-
 class InfoText extends StatelessWidget {
   final String label;
 
-  const InfoText({
-    super.key,
-    required this.label,
-  });
+  const InfoText({super.key, required this.label});
 
   @override
   Widget build(BuildContext context) {
-    return
-        Text('•   '+label, style: AppFonts.body3(color: NewColors.body));
-
+    return Text('•   ' + label, style: AppFonts.body3(color: NewColors.body));
   }
 }
-
 
 class TimeInputField extends StatelessWidget {
   final String hintText;
@@ -155,7 +146,6 @@ class TimeInputField extends StatelessWidget {
   }
 }
 
-
 class QuantityTextField extends StatelessWidget {
   final String hintText;
   final TextEditingController? controller;
@@ -178,7 +168,10 @@ class QuantityTextField extends StatelessWidget {
         hintStyle: AppFonts.body2(color: NewColors.placeHolder),
         filled: true,
         fillColor: NewColors.inputBG,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 12,
+        ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: LineColors.inputBorder),
@@ -193,12 +186,8 @@ class QuantityTextField extends StatelessWidget {
   }
 }
 
-
 class NameTextField extends StatelessWidget {
-
-  const NameTextField({
-    super.key,
-  });
+  const NameTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -213,8 +202,7 @@ class NameTextField extends StatelessWidget {
         ),
         filled: true,
         fillColor: NewColors.inputBG,
-        contentPadding:
-        const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: BorderSide(color: LineColors.inputBorder),
@@ -228,12 +216,8 @@ class NameTextField extends StatelessWidget {
   }
 }
 
-
 class NoteTextField extends StatelessWidget {
-
-  const NoteTextField({
-    super.key,
-  });
+  const NoteTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -250,8 +234,7 @@ class NoteTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(
-              color: LineColors.inputBorder, width: 1.5),
+          borderSide: BorderSide(color: LineColors.inputBorder, width: 1.5),
         ),
       ),
     );

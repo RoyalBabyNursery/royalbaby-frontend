@@ -1,215 +1,250 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/teacher/classes/add_event.dart';
-import 'package:royal/teacher/classes/studint_detils.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:royalbabyapp/riverpod_prov.dart';
+import 'package:royalbabyapp/teacher/classes/add_event.dart';
+import 'package:royalbabyapp/teacher/classes/studint_detils.dart';
+import 'package:royalbabyapp/teacher/reports/reports_screen.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 import '../photo_video/add_photos.dart';
 
-class ClasseDetils extends StatefulWidget {
-  const ClasseDetils({super.key});
+// class ClasseDetils extends ConsumerStatefulWidget {
+//   final int classIndex;
+//   const ClasseDetils({super.key, required this.classIndex});
 
-  @override
-  State<ClasseDetils> createState() => _ClasseDetilsState();
-}
+//   @override
+//   ConsumerState<ClasseDetils> createState() => _ClasseDetilsState();
+// }
 
-class _ClasseDetilsState extends State<ClasseDetils> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: NewColors.alwaysWhite,
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          children: [
-            SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
-            Row(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.all(6),
-                    height: MediaQuery.sizeOf(context).width * 0.091,
-                    width: MediaQuery.sizeOf(context).width * 0.091,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: LineColors.border, width: 1),
-                    ),
-                    child: Image.asset(
-                      'assets/images/Dropdown Icon.png',
-                      height: MediaQuery.sizeOf(context).width * 0.045,
-                      width: MediaQuery.sizeOf(context).width * 0.045,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Text(
-                  'فصل الاكتشاف (G3)',
-                  style: AppFonts.body2(color: NewColors.supHeading),
-                ),
-                Spacer(),
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const AddEvent()),
-                        );
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(6),
-                        height: MediaQuery.sizeOf(context).width * 0.091,
-                        width: MediaQuery.sizeOf(context).width * 0.091,
-                        decoration: BoxDecoration(
-                          color: NewColors.primary50,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: Image.asset(
-                          'assets/images/Add.png',
-                          height: MediaQuery.sizeOf(context).width * 0.045,
-                          width: MediaQuery.sizeOf(context).width * 0.045,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 8,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        showModalBottomSheet(
-                          context: context,
-                          isScrollControlled: true,
-                          shape: const RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.vertical(top: Radius.circular(24)),
-                          ),
-                          builder: (context) => const FilterSheet(),
-                        );
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(6),
-                        height: MediaQuery.sizeOf(context).width * 0.091,
-                        width: MediaQuery.sizeOf(context).width * 0.091,
-                        decoration: BoxDecoration(
-                          color: NewColors.alwaysWhite,
-                          borderRadius: BorderRadius.circular(8),
-                          border:
-                              Border.all(color: LineColors.border, width: 1),
-                        ),
-                        child: Image.asset(
-                          'assets/images/filter.png',
-                          height: MediaQuery.sizeOf(context).width * 0.045,
-                          width: MediaQuery.sizeOf(context).width * 0.045,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 36,
-            ),
-            TextField(
-              textDirection: TextDirection.rtl,
-              decoration: InputDecoration(
-                hintText: 'ابحث باسم الطالب...',
-                hintStyle: AppFonts.body2(color: NewColors.placeHolder),
-                prefixIcon: Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: Image.asset('assets/images/search-normal.png'),
-                ),
-                filled: true,
-                fillColor: NewColors.inputBG,
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: LineColors.inputBorder),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide(color: LineColors.border),
-                ),
-              ),
-            ),
-            Expanded(
-              child: ListView.separated(
-                itemCount: 10,
-                separatorBuilder: (_, __) => const SizedBox(height: 12),
-                itemBuilder: (context, index) {
-                  return InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const StudintDetils()),
-                      );
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        color: NewColors.lightBG,
-                        borderRadius: BorderRadius.circular(10),
-                        border: Border.all(color: LineColors.border),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Image.asset(
-                                          'assets/images/IMAGE (2).png'),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text('آدم محمود علي',
-                                              style: AppFonts.caption1(
-                                                  color: NewColors.heading)),
-                                          SizedBox(height: 4),
-                                          Text('3 سنوات',
-                                              style: AppFonts.body4(
-                                                  color: NewColors.body)),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Spacer(),
-                              Image.asset('assets/images/Vector.png'),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+// class _ClasseDetilsState extends ConsumerState<ClasseDetils> {
+//   final TextEditingController searchController = TextEditingController();
+//   String searchQuery = '';
+
+//   @override
+//   void dispose() {
+//     searchController.dispose();
+//     super.dispose();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     final classData = ref.watch(classProvider)[widget.classIndex];
+//     final isFromReportsScreen = ref.watch(isFromReportsScreenProvider);
+
+//     // Filter students based on search query
+//     final filteredStudents = classData.students.where((student) {
+//       return student.name.toLowerCase().contains(searchQuery.toLowerCase());
+//     }).toList();
+//     return Scaffold(
+//       backgroundColor: NewColors.alwaysWhite,
+//       body: Padding(
+//         padding: const EdgeInsets.all(12.0),
+//         child: Column(
+//           children: [
+//             SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
+//             Row(
+//               children: [
+//                 InkWell(
+//                   onTap: () {
+//                     ref.read(isFromReportsScreenProvider.notifier).state =
+//                         false;
+//                     Navigator.pop(context);
+//                   },
+//                   child: Container(
+//                     padding: const EdgeInsets.all(6),
+//                     height: MediaQuery.sizeOf(context).width * 0.091,
+//                     width: MediaQuery.sizeOf(context).width * 0.091,
+//                     decoration: BoxDecoration(
+//                       borderRadius: BorderRadius.circular(8),
+//                       border: Border.all(color: LineColors.border, width: 1),
+//                     ),
+//                     child: Image.asset(
+//                       'assets/images/Dropdown Icon.png',
+//                       height: MediaQuery.sizeOf(context).width * 0.045,
+//                       width: MediaQuery.sizeOf(context).width * 0.045,
+//                       fit: BoxFit.contain,
+//                     ),
+//                   ),
+//                 ),
+//                 const SizedBox(width: 10),
+//                 Text(
+//                   'فصل الاكتشاف (G3)',
+//                   style: AppFonts.body2(color: NewColors.supHeading),
+//                 ),
+//                 Spacer(),
+//                 Row(
+//                   children: [
+//                     InkWell(
+//                       onTap: () {
+//                         Navigator.push(
+//                           context,
+//                           MaterialPageRoute(
+//                             builder: (context) => const AddEvent(),
+//                           ),
+//                         );
+//                       },
+//                       child: Container(
+//                         padding: const EdgeInsets.all(6),
+//                         height: MediaQuery.sizeOf(context).width * 0.091,
+//                         width: MediaQuery.sizeOf(context).width * 0.091,
+//                         decoration: BoxDecoration(
+//                           color: NewColors.primary50,
+//                           borderRadius: BorderRadius.circular(8),
+//                         ),
+//                         child: Image.asset(
+//                           'assets/images/Add.png',
+//                           height: MediaQuery.sizeOf(context).width * 0.045,
+//                           width: MediaQuery.sizeOf(context).width * 0.045,
+//                           fit: BoxFit.contain,
+//                         ),
+//                       ),
+//                     ),
+//                     SizedBox(width: 8),
+//                     GestureDetector(
+//                       onTap: () {
+//                         showModalBottomSheet(
+//                           context: context,
+//                           isScrollControlled: true,
+//                           shape: const RoundedRectangleBorder(
+//                             borderRadius: BorderRadius.vertical(
+//                               top: Radius.circular(24),
+//                             ),
+//                           ),
+//                           builder: (context) => const FilterSheet(),
+//                         );
+//                       },
+//                       child: Container(
+//                         padding: const EdgeInsets.all(6),
+//                         height: MediaQuery.sizeOf(context).width * 0.091,
+//                         width: MediaQuery.sizeOf(context).width * 0.091,
+//                         decoration: BoxDecoration(
+//                           color: NewColors.alwaysWhite,
+//                           borderRadius: BorderRadius.circular(8),
+//                           border: Border.all(
+//                             color: LineColors.border,
+//                             width: 1,
+//                           ),
+//                         ),
+//                         child: Image.asset(
+//                           'assets/images/filter.png',
+//                           height: MediaQuery.sizeOf(context).width * 0.045,
+//                           width: MediaQuery.sizeOf(context).width * 0.045,
+//                           fit: BoxFit.contain,
+//                         ),
+//                       ),
+//                     ),
+//                   ],
+//                 ),
+//               ],
+//             ),
+//             SizedBox(height: 36),
+//             TextField(
+//               textDirection: TextDirection.rtl,
+//               decoration: InputDecoration(
+//                 hintText: 'ابحث باسم الطالب...',
+//                 hintStyle: AppFonts.body2(color: NewColors.placeHolder),
+//                 prefixIcon: Padding(
+//                   padding: const EdgeInsets.all(12.0),
+//                   child: Image.asset('assets/images/search-normal.png'),
+//                 ),
+//                 filled: true,
+//                 fillColor: NewColors.inputBG,
+//                 contentPadding: const EdgeInsets.symmetric(
+//                   horizontal: 12,
+//                   vertical: 0,
+//                 ),
+//                 enabledBorder: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                   borderSide: BorderSide(color: LineColors.inputBorder),
+//                 ),
+//                 focusedBorder: OutlineInputBorder(
+//                   borderRadius: BorderRadius.circular(12),
+//                   borderSide: BorderSide(color: LineColors.border),
+//                 ),
+//               ),
+//             ),
+//             Expanded(
+//               child: ListView.separated(
+//                 itemCount: 10,
+//                 separatorBuilder: (_, __) => const SizedBox(height: 12),
+//                 itemBuilder: (context, index) {
+//                   final student = filteredStudents[index];
+//                   return InkWell(
+//                     onTap: () {
+//                       ref.read(selectedStudentProvider.notifier).state =
+//                           student;
+//                       Navigator.push(
+//                         context,
+//                         MaterialPageRoute(
+//                           builder: (_) => isFromReportsScreen
+//                               ? const StudentReportPage()
+//                               : const StudentDetailsPage(),
+//                         ),
+//                       );
+//                     },
+//                     child: Container(
+//                       padding: const EdgeInsets.all(12),
+//                       decoration: BoxDecoration(
+//                         color: NewColors.lightBG,
+//                         borderRadius: BorderRadius.circular(10),
+//                         border: Border.all(color: LineColors.border),
+//                       ),
+//                       child: Column(
+//                         crossAxisAlignment: CrossAxisAlignment.start,
+//                         children: [
+//                           Row(
+//                             children: [
+//                               Column(
+//                                 crossAxisAlignment: CrossAxisAlignment.start,
+//                                 children: [
+//                                   Row(
+//                                     children: [
+//                                       Image.asset(
+//                                         'assets/images/IMAGE (2).png',
+//                                       ),
+//                                       SizedBox(width: 10),
+//                                       Column(
+//                                         crossAxisAlignment:
+//                                             CrossAxisAlignment.start,
+//                                         children: [
+//                                           Text(
+//                                             'آدم محمود علي',
+//                                             style: AppFonts.caption1(
+//                                               color: NewColors.heading,
+//                                             ),
+//                                           ),
+//                                           SizedBox(height: 4),
+//                                           Text(
+//                                             '3 سنوات',
+//                                             style: AppFonts.body4(
+//                                               color: NewColors.body,
+//                                             ),
+//                                           ),
+//                                         ],
+//                                       ),
+//                                     ],
+//                                   ),
+//                                 ],
+//                               ),
+//                               Spacer(),
+//                               Image.asset('assets/images/Vector.png'),
+//                             ],
+//                           ),
+//                         ],
+//                       ),
+//                     ),
+//                   );
+//                 },
+//               ),
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
 
 class FilterSheet extends StatefulWidget {
   final Color? backgroundColor;
@@ -251,41 +286,46 @@ class _FilterSheetState extends State<FilterSheet> {
                     ),
                   ),
                   const SizedBox(width: 12),
-                  Text('تصفية',
-                      style: AppFonts.supHeading2(color: NewColors.heading)),
+                  Text(
+                    'تصفية',
+                    style: AppFonts.supHeading2(color: NewColors.heading),
+                  ),
                 ],
               ),
               const SizedBox(height: 20),
               buildSectionTitle('الحضور / الغياب'),
-              buildRadioGroup(['حاضر', 'غائب', 'متأخر'], attendance,
-                  (val) => setState(() => attendance = val)),
-              SizedBox(height: 12),
-              Divider(
-                height: 1,
-                color: LineColors.line,
+              buildRadioGroup(
+                ['حاضر', 'غائب', 'متأخر'],
+                attendance,
+                (val) => setState(() => attendance = val),
               ),
+              SizedBox(height: 12),
+              Divider(height: 1, color: LineColors.line),
               SizedBox(height: 12),
               buildSectionTitle('الجنس'),
-              buildRadioGroup(['ذكور', 'إناث'], gender,
-                  (val) => setState(() => gender = val)),
-              SizedBox(height: 12),
-              Divider(
-                height: 1,
-                color: LineColors.line,
+              buildRadioGroup(
+                ['ذكور', 'إناث'],
+                gender,
+                (val) => setState(() => gender = val),
               ),
+              SizedBox(height: 12),
+              Divider(height: 1, color: LineColors.line),
               SizedBox(height: 12),
               buildSectionTitle('العمر'),
-              buildRadioGroup(['2-3 سنوات', '3-4 سنوات', '4-5 سنوات'], age,
-                  (val) => setState(() => age = val)),
-              SizedBox(height: 12),
-              Divider(
-                height: 1,
-                color: LineColors.line,
+              buildRadioGroup(
+                ['2-3 سنوات', '3-4 سنوات', '4-5 سنوات'],
+                age,
+                (val) => setState(() => age = val),
               ),
               SizedBox(height: 12),
+              Divider(height: 1, color: LineColors.line),
+              SizedBox(height: 12),
               buildSectionTitle('السلوك'),
-              buildRadioGroup(['ممتاز', 'جيد', 'يحتاج متابعة'], behavior,
-                  (val) => setState(() => behavior = val)),
+              buildRadioGroup(
+                ['ممتاز', 'جيد', 'يحتاج متابعة'],
+                behavior,
+                (val) => setState(() => behavior = val),
+              ),
               const SizedBox(height: 24),
               SizedBox(
                 width: double.infinity,
@@ -301,8 +341,10 @@ class _FilterSheetState extends State<FilterSheet> {
                     Navigator.pop(context);
                     // Apply filter logic here
                   },
-                  child: Text('حفظ',
-                      style: AppFonts.buttonLg(color: Colors.white)),
+                  child: Text(
+                    'حفظ',
+                    style: AppFonts.buttonLg(color: Colors.white),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),
@@ -318,14 +360,19 @@ class _FilterSheetState extends State<FilterSheet> {
       alignment: Alignment.centerRight,
       child: Padding(
         padding: const EdgeInsets.only(top: 12.0, bottom: 8),
-        child: Text(title,
-            style: AppFonts.supHeading3(color: NewColors.supHeading)),
+        child: Text(
+          title,
+          style: AppFonts.supHeading3(color: NewColors.supHeading),
+        ),
       ),
     );
   }
 
   Widget buildRadioGroup(
-      List<String> options, String groupValue, Function(String) onChanged) {
+    List<String> options,
+    String groupValue,
+    Function(String) onChanged,
+  ) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Wrap(

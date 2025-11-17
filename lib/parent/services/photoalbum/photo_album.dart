@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/parent/services/photoalbum/photo_screen.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/parent/services/photoalbum/photo_screen.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../../theme/fonts.dart';
 
@@ -30,9 +30,7 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.065,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.065),
             Row(
               children: [
                 InkWell(
@@ -45,10 +43,7 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -58,9 +53,7 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'البوم الصور',
                   style: AppFonts.body2(color: NewColors.supHeading),
@@ -68,7 +61,8 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
               ],
             ),
             const SizedBox(height: 20),
-            SingleChildScrollView(scrollDirection: Axis.horizontal,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(tabs.length, (index) {
                   final isSelected = selectedTab == index;
@@ -82,7 +76,9 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                       },
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 10),
+                          horizontal: 12,
+                          vertical: 10,
+                        ),
                         decoration: BoxDecoration(
                           color: isSelected
                               ? NewColors.primary400
@@ -115,14 +111,15 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                     case 0:
                       return ListView.separated(
                         itemCount: 4,
-                        separatorBuilder: (_, __) =>
-                        const SizedBox(height: 12),
+                        separatorBuilder: (_, __) => const SizedBox(height: 12),
                         itemBuilder: (context, index) {
                           return InkWell(
                             onTap: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const PhotoScreen()),
+                                MaterialPageRoute(
+                                  builder: (context) => const PhotoScreen(),
+                                ),
                               );
                             },
                             child: Container(
@@ -139,29 +136,32 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                                     children: [
                                       Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         children: [
                                           Row(
                                             children: [
                                               Image.asset(
-                                                  'assets/images/photos.png'),
-                                              SizedBox(
-                                                width: 10,
+                                                'assets/images/photos.png',
                                               ),
+                                              SizedBox(width: 10),
                                               Column(
                                                 crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                                    CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                      'تعلم آداب الدعاء والوضوء',
-                                                      style: AppFonts.headingH6(
-                                                          color:
-                                                          NewColors.supHeading)),
+                                                    'تعلم آداب الدعاء والوضوء',
+                                                    style: AppFonts.headingH6(
+                                                      color:
+                                                          NewColors.supHeading,
+                                                    ),
+                                                  ),
                                                   SizedBox(height: 4),
-                                                  Text('11 مايو 2025',
-                                                      style: AppFonts.body4(
-                                                          color: NewColors
-                                                              .body)),
+                                                  Text(
+                                                    '11 مايو 2025',
+                                                    style: AppFonts.body4(
+                                                      color: NewColors.body,
+                                                    ),
+                                                  ),
                                                 ],
                                               ),
                                             ],
@@ -169,11 +169,16 @@ class _PhotoAlbumState extends State<PhotoAlbum> {
                                         ],
                                       ),
                                       Spacer(),
-                                      Text('8 صور',
-                                            style: AppFonts.body3(
-                                                color: NewColors.green)),
-                                      SizedBox(width: 5,),
-                                      Image.asset('assets/images/Dropdown Icon2.png')
+                                      Text(
+                                        '8 صور',
+                                        style: AppFonts.body3(
+                                          color: NewColors.green,
+                                        ),
+                                      ),
+                                      SizedBox(width: 5),
+                                      Image.asset(
+                                        'assets/images/Dropdown Icon2.png',
+                                      ),
                                     ],
                                   ),
                                 ],

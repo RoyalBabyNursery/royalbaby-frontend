@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
+import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 import '../../widget/text-field.dart';
@@ -13,7 +13,6 @@ class AddPhoto extends StatefulWidget {
 }
 
 class _AddPhotoState extends State<AddPhoto> {
-
   final TextEditingController civilIdController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
@@ -39,8 +38,7 @@ class _AddPhotoState extends State<AddPhoto> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border:
-                      Border.all(color: LineColors.border, width: 1),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -57,31 +55,23 @@ class _AddPhotoState extends State<AddPhoto> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 24,
-            ),
-            Text(
-              'اسم المناسبة',
-              style: AppFonts.body2(color: NewColors.label),
-            ),
-            SizedBox(
-              height: 12,
-            ),
+            SizedBox(height: 24),
+            Text('اسم المناسبة', style: AppFonts.body2(color: NewColors.label)),
+            SizedBox(height: 12),
             CustomTextFieldWidget(
-                labelText: 'ادخل اسم المناسبة',
-                controller: civilIdController),
-            SizedBox(
-              height: 12,
+              labelText: 'ادخل اسم المناسبة',
+              controller: civilIdController,
             ),
+            SizedBox(height: 12),
             Text(
               'تاريخ المناسبة',
               style: AppFonts.body2(color: NewColors.label),
             ),
-            SizedBox(
-              height: 12,
-            ),
+            SizedBox(height: 12),
             CustomTextFieldWidget(
-                labelText: 'اختر التاريخ', controller: civilIdController),
+              labelText: 'اختر التاريخ',
+              controller: civilIdController,
+            ),
             Expanded(
               child: ListView.separated(
                 itemCount: 2,
@@ -104,22 +94,25 @@ class _AddPhotoState extends State<AddPhoto> {
                               children: [
                                 Row(
                                   children: [
-                                    Image.asset(
-                                        'assets/images/Image (1).png'),
-                                    SizedBox(
-                                      width: 10,
-                                    ),
+                                    Image.asset('assets/images/Image (1).png'),
+                                    SizedBox(width: 10),
                                     Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
-                                        Text('100043.JPG',
-                                            style: AppFonts.supHeading3(
-                                                color: NewColors.blue)),
+                                        Text(
+                                          '100043.JPG',
+                                          style: AppFonts.supHeading3(
+                                            color: NewColors.blue,
+                                          ),
+                                        ),
                                         SizedBox(height: 4),
-                                        Text('342.KP',
-                                            style: AppFonts.body4(
-                                                color: NewColors.caption)),
+                                        Text(
+                                          '342.KP',
+                                          style: AppFonts.body4(
+                                            color: NewColors.caption,
+                                          ),
+                                        ),
                                       ],
                                     ),
                                   ],
@@ -136,9 +129,12 @@ class _AddPhotoState extends State<AddPhoto> {
                 },
               ),
             ),
-            SizedBox(height: 12,),
-            Text('اضف ملفات اخري',style: AppFonts.supHeading3(color: NewColors.blue),),
-            SizedBox(height: 24,),
+            SizedBox(height: 12),
+            Text(
+              'اضف ملفات اخري',
+              style: AppFonts.supHeading3(color: NewColors.blue),
+            ),
+            SizedBox(height: 24),
             Container(
               height: MediaQuery.sizeOf(context).height * 0.057,
               width: MediaQuery.sizeOf(context).width,
@@ -147,10 +143,11 @@ class _AddPhotoState extends State<AddPhoto> {
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Center(
-                  child: Text(
-                    'رفع',
-                    style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
-                  )),
+                child: Text(
+                  'رفع',
+                  style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
+                ),
+              ),
             ),
           ],
         ),

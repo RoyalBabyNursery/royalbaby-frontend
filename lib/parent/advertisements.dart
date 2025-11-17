@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
 
 class Advertisements extends StatefulWidget {
   const Advertisements({super.key});
@@ -19,9 +19,7 @@ class _AdvertisementsState extends State<Advertisements> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.07,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.07),
             Row(
               children: [
                 InkWell(
@@ -34,10 +32,7 @@ class _AdvertisementsState extends State<Advertisements> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -47,18 +42,14 @@ class _AdvertisementsState extends State<Advertisements> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
                   'الإعلانات',
                   style: AppFonts.body2(color: NewColors.supHeading),
                 ),
               ],
             ),
-            SizedBox(
-              height: 30,
-            ),
+            SizedBox(height: 30),
             Expanded(
               child: ListView.separated(
                 padding: const EdgeInsets.all(1),
@@ -98,13 +89,14 @@ class _AdvertisementsState extends State<Advertisements> {
                               Text(
                                 'نحيطكم علماً ببدء فترة التسجيل للفصل الدراسي الثاني اعتبارًا من 15 يناير 2025.',
                                 style: AppFonts.supHeading4(
-                                    color: NewColors.supHeading),
+                                  color: NewColors.supHeading,
+                                ),
                               ),
                               const SizedBox(height: 5),
                               Text(
                                 'اليوم 11:00ص',
                                 style: AppFonts.body4(color: NewColors.body),
-                              )
+                              ),
                             ],
                           ),
                         ),
@@ -113,7 +105,7 @@ class _AdvertisementsState extends State<Advertisements> {
                           'assets/images/Vector.png',
                           height: MediaQuery.sizeOf(context).width * 0.065,
                           width: MediaQuery.sizeOf(context).width * 0.065,
-                        )
+                        ),
                       ],
                     ),
                   );
@@ -132,7 +124,8 @@ class _AnnouncementDetailsSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(color: NewColors.alwaysWhite,
+    return Container(
+      color: NewColors.alwaysWhite,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 20, 16, 30),
         child: Column(
@@ -143,13 +136,17 @@ class _AnnouncementDetailsSheet extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () => Navigator.pop(context),
-                  child:  Image.asset('assets/images/Close Button Container.png',
-                  height: MediaQuery.sizeOf(context).width * 0.1,
-                  width: MediaQuery.sizeOf(context).width * 0.1,),
+                  child: Image.asset(
+                    'assets/images/Close Button Container.png',
+                    height: MediaQuery.sizeOf(context).width * 0.1,
+                    width: MediaQuery.sizeOf(context).width * 0.1,
+                  ),
                 ),
-               SizedBox(width: 20,),
-                Text('تفاصيل الإعلان',
-                    style: AppFonts.supHeading2(color: NewColors.supHeading)),
+                SizedBox(width: 20),
+                Text(
+                  'تفاصيل الإعلان',
+                  style: AppFonts.supHeading2(color: NewColors.supHeading),
+                ),
               ],
             ),
             const SizedBox(height: 16),
@@ -163,29 +160,49 @@ class _AnnouncementDetailsSheet extends StatelessWidget {
               style: AppFonts.caption1(color: NewColors.caption),
             ),
             const SizedBox(height: 16),
-            Text('تفاصيل التسجيل:',
-                style: AppFonts.body2(color: NewColors.supHeading)),
+            Text(
+              'تفاصيل التسجيل:',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
             const SizedBox(height: 8),
-            Text('• يبدأ التسجيل: 15 يناير 2025',
-                style: AppFonts.body2(color: NewColors.supHeading)),
-            Text('• ينتهي التسجيل: 31 يناير 2025',
-                style: AppFonts.body2(color: NewColors.supHeading)),
-            Text('• أولوية القبول للطلاب الحاليين، يليها النقل.',
-                style: AppFonts.body2(color: NewColors.supHeading)),
-            Text('• يشترط تحديث بيانات الطفل وولي الأمر.',
-                style: AppFonts.body2(color: NewColors.supHeading)),
+            Text(
+              '• يبدأ التسجيل: 15 يناير 2025',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
+            Text(
+              '• ينتهي التسجيل: 31 يناير 2025',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
+            Text(
+              '• أولوية القبول للطلاب الحاليين، يليها النقل.',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
+            Text(
+              '• يشترط تحديث بيانات الطفل وولي الأمر.',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
             const SizedBox(height: 16),
-            Text('المستندات المطلوبة للتسجيل الجديد:',
-                style: AppFonts.body2(color: NewColors.supHeading)),
+            Text(
+              'المستندات المطلوبة للتسجيل الجديد:',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
             const SizedBox(height: 8),
-            Text('• صورة من شهادة ميلاد الطفل.',
-                style: AppFonts.body2(color: NewColors.supHeading)),
-            Text('• نسخة من بطاقة ولي الأمر.',
-                style: AppFonts.body2(color: NewColors.supHeading)),
-            Text('• صورة شخصية حديثة للطفل.',
-                style: AppFonts.body2(color: NewColors.supHeading)),
-            Text('• شهادة التطعيمات الأساسية.',
-                style: AppFonts.body2(color: NewColors.supHeading)),
+            Text(
+              '• صورة من شهادة ميلاد الطفل.',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
+            Text(
+              '• نسخة من بطاقة ولي الأمر.',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
+            Text(
+              '• صورة شخصية حديثة للطفل.',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
+            Text(
+              '• شهادة التطعيمات الأساسية.',
+              style: AppFonts.body2(color: NewColors.supHeading),
+            ),
           ],
         ),
       ),

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/widget/container.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/widget/container.dart';
 
 import '../../theme/fonts.dart';
 
@@ -21,9 +21,7 @@ class _SettingState extends State<Setting> {
         padding: const EdgeInsets.all(12.0),
         child: Column(
           children: [
-            SizedBox(
-              height: MediaQuery.sizeOf(context).height * 0.07,
-            ),
+            SizedBox(height: MediaQuery.sizeOf(context).height * 0.07),
             Row(
               children: [
                 InkWell(
@@ -36,10 +34,7 @@ class _SettingState extends State<Setting> {
                     width: MediaQuery.sizeOf(context).width * 0.091,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(
-                        color: LineColors.border,
-                        width: 1,
-                      ),
+                      border: Border.all(color: LineColors.border, width: 1),
                     ),
                     child: Image.asset(
                       'assets/images/Dropdown Icon.png',
@@ -49,16 +44,14 @@ class _SettingState extends State<Setting> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: 10,
-                ),
+                SizedBox(width: 10),
                 Text(
-                  'الاعدادات' ,
+                  'الاعدادات',
                   style: AppFonts.body2(color: NewColors.supHeading),
                 ),
               ],
             ),
-            SizedBox(height: 24,),
+            SizedBox(height: 24),
             SettingHelp(
               title: 'اللغة',
               note: 'العربية',
@@ -67,7 +60,9 @@ class _SettingState extends State<Setting> {
                   context: context,
                   isScrollControlled: true,
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(24),
+                    ),
                   ),
                   builder: (_) => const LanguageBottomSheet(),
                 );
@@ -83,7 +78,9 @@ class _SettingState extends State<Setting> {
                   context: context,
                   isScrollControlled: true,
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(24),
+                    ),
                   ),
                   builder: (_) => const PasswordBottomSheet(),
                 );
@@ -99,13 +96,14 @@ class _SettingState extends State<Setting> {
                   context: context,
                   isScrollControlled: true,
                   shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(24),
+                    ),
                   ),
                   builder: (_) => const ThemeBottomSheet(),
                 );
               },
             ),
-
           ],
         ),
       ),
@@ -113,22 +111,20 @@ class _SettingState extends State<Setting> {
   }
 }
 
-
 class LanguageBottomSheet extends StatelessWidget {
   final Color? backgroundColor;
   final Color? textColor;
 
-  const LanguageBottomSheet({
-    super.key,
-    this.backgroundColor,
-    this.textColor,
-  });
+  const LanguageBottomSheet({super.key, this.backgroundColor, this.textColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(24),
+          topRight: Radius.circular(24),
+        ),
         color: backgroundColor ?? NewColors.alwaysWhite,
       ),
       padding: const EdgeInsets.all(12),
@@ -140,19 +136,27 @@ class LanguageBottomSheet extends StatelessWidget {
               Image.asset('assets/images/Close Button Container.png'),
               Text(
                 'تغيير اللغه',
-                style: AppFonts.supHeading2(color: textColor ?? NewColors.heading),
+                style: AppFonts.supHeading2(
+                  color: textColor ?? NewColors.heading,
+                ),
               ),
             ],
           ),
           const SizedBox(height: 10),
           ListTile(
             leading: Image.asset('assets/images/Reward Points Label.png'),
-            title: Text('العربية', style: AppFonts.body1(color: NewColors.supHeading)),
+            title: Text(
+              'العربية',
+              style: AppFonts.body1(color: NewColors.supHeading),
+            ),
             onTap: () => Navigator.pop(context),
           ),
           ListTile(
             leading: Image.asset('assets/images/Reward Points Label2.png'),
-            title: Text('English', style: AppFonts.body1(color: NewColors.supHeading)),
+            title: Text(
+              'English',
+              style: AppFonts.body1(color: NewColors.supHeading),
+            ),
             onTap: () => Navigator.pop(context),
           ),
         ],
@@ -165,11 +169,7 @@ class PasswordBottomSheet extends StatefulWidget {
   final Color? backgroundColor;
   final Color? textColor;
 
-  const PasswordBottomSheet({
-    super.key,
-    this.backgroundColor,
-    this.textColor,
-  });
+  const PasswordBottomSheet({super.key, this.backgroundColor, this.textColor});
 
   @override
   State<PasswordBottomSheet> createState() => _PasswordBottomSheetState();
@@ -207,14 +207,18 @@ class _PasswordBottomSheetState extends State<PasswordBottomSheet> {
               Text(
                 'تغيير كلمة المرور',
                 style: AppFonts.supHeading2(
-                    color: widget.textColor ?? NewColors.heading),
+                  color: widget.textColor ?? NewColors.heading,
+                ),
               ),
             ],
           ),
           const SizedBox(height: 20),
 
           /// كلمة المرور القديمة
-          Text('كلمة المرور القديمة', style: AppFonts.body2(color: NewColors.label)),
+          Text(
+            'كلمة المرور القديمة',
+            style: AppFonts.body2(color: NewColors.label),
+          ),
           const SizedBox(height: 8),
           buildPasswordField(
             isVisible: oldPassVisible,
@@ -223,7 +227,10 @@ class _PasswordBottomSheetState extends State<PasswordBottomSheet> {
           const SizedBox(height: 16),
 
           /// كلمة المرور الجديدة
-          Text('كلمة المرور الجديدة', style: AppFonts.body2(color: NewColors.label)),
+          Text(
+            'كلمة المرور الجديدة',
+            style: AppFonts.body2(color: NewColors.label),
+          ),
           const SizedBox(height: 8),
           buildPasswordField(
             isVisible: newPassVisible,
@@ -232,21 +239,30 @@ class _PasswordBottomSheetState extends State<PasswordBottomSheet> {
           const SizedBox(height: 16),
 
           /// تأكيد كلمة المرور
-          Text('اعادة كلمة المرور الجديدة', style: AppFonts.body2(color: NewColors.label)),
+          Text(
+            'اعادة كلمة المرور الجديدة',
+            style: AppFonts.body2(color: NewColors.label),
+          ),
           const SizedBox(height: 8),
           buildPasswordField(
             isVisible: confirmPassVisible,
-            onToggle: () => setState(() => confirmPassVisible = !confirmPassVisible),
+            onToggle: () =>
+                setState(() => confirmPassVisible = !confirmPassVisible),
           ),
           const SizedBox(height: 16),
           Container(
-            height: MediaQuery.sizeOf(context).height*0.057,
+            height: MediaQuery.sizeOf(context).height * 0.057,
             width: MediaQuery.sizeOf(context).width,
             decoration: BoxDecoration(
               color: NewColors.primary500,
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Center(child: Text('حفظ',style: AppFonts.buttonLg(color: NewColors.alwaysWhite),)),
+            child: Center(
+              child: Text(
+                'حفظ',
+                style: AppFonts.buttonLg(color: NewColors.alwaysWhite),
+              ),
+            ),
           ),
         ],
       ),
@@ -262,7 +278,10 @@ class _PasswordBottomSheetState extends State<PasswordBottomSheet> {
       decoration: InputDecoration(
         filled: true,
         fillColor: NewColors.inputBG,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        contentPadding: const EdgeInsets.symmetric(
+          horizontal: 12,
+          vertical: 12,
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide.none,
@@ -279,23 +298,20 @@ class _PasswordBottomSheetState extends State<PasswordBottomSheet> {
   }
 }
 
-
-
 class ThemeBottomSheet extends StatelessWidget {
   final Color? backgroundColor;
   final Color? textColor;
 
-  const ThemeBottomSheet({
-    super.key,
-    this.backgroundColor,
-    this.textColor,
-  });
+  const ThemeBottomSheet({super.key, this.backgroundColor, this.textColor});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(24), topRight: Radius.circular(24)),
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(24),
+          topRight: Radius.circular(24),
+        ),
         color: backgroundColor ?? NewColors.alwaysWhite,
       ),
       padding: const EdgeInsets.all(20),
@@ -307,26 +323,37 @@ class ThemeBottomSheet extends StatelessWidget {
               Image.asset('assets/images/Close Button Container.png'),
               Text(
                 'ثيم التطبيق',
-                style: AppFonts.supHeading2(color: textColor ?? NewColors.heading),
+                style: AppFonts.supHeading2(
+                  color: textColor ?? NewColors.heading,
+                ),
               ),
             ],
           ),
           const SizedBox(height: 10),
           ListTile(
             leading: Image.asset('assets/images/Reward Points Label3.png'),
-            title: Text('الوضع الفاتح', style: AppFonts.body1(color: NewColors.supHeading)),
+            title: Text(
+              'الوضع الفاتح',
+              style: AppFonts.body1(color: NewColors.supHeading),
+            ),
             onTap: () => Navigator.pop(context),
           ),
           Divider(height: 1, color: LineColors.line),
           ListTile(
             leading: Image.asset('assets/images/Reward Points Label (1).png'),
-            title: Text('الوضع الغامق', style: AppFonts.body1(color: NewColors.supHeading)),
+            title: Text(
+              'الوضع الغامق',
+              style: AppFonts.body1(color: NewColors.supHeading),
+            ),
             onTap: () => Navigator.pop(context),
           ),
           Divider(height: 1, color: LineColors.line),
           ListTile(
             leading: Image.asset('assets/images/Reward Points Label (2).png'),
-            title: Text('الوضع الافتراضي', style: AppFonts.body1(color: NewColors.supHeading)),
+            title: Text(
+              'الوضع الافتراضي',
+              style: AppFonts.body1(color: NewColors.supHeading),
+            ),
             onTap: () => Navigator.pop(context),
           ),
         ],
@@ -334,4 +361,3 @@ class ThemeBottomSheet extends StatelessWidget {
     );
   }
 }
-

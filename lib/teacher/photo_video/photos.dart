@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:royal/theme/colors.dart';
-import 'package:royal/theme/fonts.dart';
+import 'package:royalbabyapp/theme/colors.dart';
+import 'package:royalbabyapp/theme/fonts.dart';
 
 import 'edit_photo.dart';
 
@@ -42,14 +42,16 @@ class _PhotosState extends State<Photos> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                Text('احتفال الاجازة',
-                    style: AppFonts.body2(color: NewColors.supHeading)),
+                Text(
+                  'احتفال الاجازة',
+                  style: AppFonts.body2(color: NewColors.supHeading),
+                ),
                 const Spacer(),
                 GestureDetector(
                   onTapDown: (TapDownDetails details) {
-                    final RenderBox overlay = Overlay.of(context)
-                        .context
-                        .findRenderObject() as RenderBox;
+                    final RenderBox overlay =
+                        Overlay.of(context).context.findRenderObject()
+                            as RenderBox;
                     showMenu<String>(
                       context: context,
                       position: RelativeRect.fromRect(
@@ -70,7 +72,9 @@ class _PhotosState extends State<Photos> {
                                 Navigator.pop(context); // لإغلاق المينيو
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (_) => const EditPhoto()),
+                                  MaterialPageRoute(
+                                    builder: (_) => const EditPhoto(),
+                                  ),
                                 );
                               },
                               child: Row(
@@ -83,13 +87,14 @@ class _PhotosState extends State<Photos> {
                                   const SizedBox(width: 8),
                                   Text(
                                     'تعديل',
-                                    style: AppFonts.body3(color: NewColors.supHeading),
+                                    style: AppFonts.body3(
+                                      color: NewColors.supHeading,
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
                           ),
-
                         ),
                         const PopupMenuDivider(),
                         PopupMenuItem<String>(
@@ -102,8 +107,10 @@ class _PhotosState extends State<Photos> {
                                 width: 20,
                               ),
                               const SizedBox(width: 8),
-                              Text('حذف',
-                                  style: AppFonts.body3(color: NewColors.red)),
+                              Text(
+                                'حذف',
+                                style: AppFonts.body3(color: NewColors.red),
+                              ),
                             ],
                           ),
                         ),
@@ -116,38 +123,54 @@ class _PhotosState extends State<Photos> {
                             return AlertDialog(
                               backgroundColor: NewColors.alwaysWhite,
                               shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(16)),
-                              title: Text('حذف الألبوم',
-                                  style: AppFonts.headingH5(
-                                      color: NewColors.heading)),
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              title: Text(
+                                'حذف الألبوم',
+                                style: AppFonts.headingH5(
+                                  color: NewColors.heading,
+                                ),
+                              ),
                               content: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text('هذا الاجراء سيحذف البوم احتفال الاجازة',
-                                      style: AppFonts.supHeading3(
-                                          color: NewColors.supHeading)),
+                                  Text(
+                                    'هذا الاجراء سيحذف البوم احتفال الاجازة',
+                                    style: AppFonts.supHeading3(
+                                      color: NewColors.supHeading,
+                                    ),
+                                  ),
                                   const SizedBox(height: 8),
-                                  Text('هل انت متأكد من الحذف ؟',
-                                      style: AppFonts.body3(
-                                          color: NewColors.caption)),
+                                  Text(
+                                    'هل انت متأكد من الحذف ؟',
+                                    style: AppFonts.body3(
+                                      color: NewColors.caption,
+                                    ),
+                                  ),
                                 ],
                               ),
                               actions: [
                                 TextButton(
                                   onPressed: () => Navigator.pop(context),
-                                  child: Text('الغاء',
-                                      style: AppFonts.headingH6(
-                                          color: NewColors.primary500)),
+                                  child: Text(
+                                    'الغاء',
+                                    style: AppFonts.headingH6(
+                                      color: NewColors.primary500,
+                                    ),
+                                  ),
                                 ),
                                 TextButton(
                                   onPressed: () {
                                     Navigator.pop(context);
                                     // Add delete logic here
                                   },
-                                  child: Text('حذف',
-                                      style: AppFonts.headingH6(
-                                          color: NewColors.red)),
+                                  child: Text(
+                                    'حذف',
+                                    style: AppFonts.headingH6(
+                                      color: NewColors.red,
+                                    ),
+                                  ),
                                 ),
                               ],
                             );
@@ -193,11 +216,13 @@ class _PhotosState extends State<Photos> {
                             padding: const EdgeInsets.all(24.0),
                             child: Column(
                               children: [
-                                SizedBox(height: 50,),
+                                SizedBox(height: 50),
                                 Stack(
                                   children: [
                                     Container(
-                                      height: MediaQuery.sizeOf(context).height * 0.6,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                          0.6,
                                       decoration: BoxDecoration(
                                         color: NewColors.alwaysWhite,
                                         borderRadius: const BorderRadius.only(
@@ -205,7 +230,9 @@ class _PhotosState extends State<Photos> {
                                           topRight: Radius.circular(16),
                                         ),
                                         image: const DecorationImage(
-                                          image: AssetImage('assets/images/Image1.png'),
+                                          image: AssetImage(
+                                            'assets/images/Image1.png',
+                                          ),
                                           fit: BoxFit.cover,
                                         ),
                                       ),
@@ -217,11 +244,15 @@ class _PhotosState extends State<Photos> {
                                         onTap: () => Navigator.pop(context),
                                         child: Container(
                                           decoration: BoxDecoration(
-                                            color: Colors.black.withOpacity(0.4),
+                                            color: Colors.black.withOpacity(
+                                              0.4,
+                                            ),
                                             shape: BoxShape.circle,
                                           ),
                                           padding: const EdgeInsets.all(6),
-                                          child:  Image.asset('assets/images/Close Button.png'),
+                                          child: Image.asset(
+                                            'assets/images/Close Button.png',
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -230,8 +261,9 @@ class _PhotosState extends State<Photos> {
                                 Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
-                                        bottomLeft: Radius.circular(16),
-                                        bottomRight: Radius.circular(16)),
+                                      bottomLeft: Radius.circular(16),
+                                      bottomRight: Radius.circular(16),
+                                    ),
                                     color: NewColors.alwaysWhite,
                                   ),
                                   child: Column(
@@ -241,7 +273,8 @@ class _PhotosState extends State<Photos> {
                                           child: Text(
                                             'تحميل',
                                             style: AppFonts.buttonLg(
-                                                color: NewColors.primary500),
+                                              color: NewColors.primary500,
+                                            ),
                                           ),
                                         ),
                                         onTap: () {
@@ -250,13 +283,16 @@ class _PhotosState extends State<Photos> {
                                         },
                                       ),
                                       const Divider(
-                                          height: 1, color: LineColors.line),
+                                        height: 1,
+                                        color: LineColors.line,
+                                      ),
                                       ListTile(
                                         title: Center(
                                           child: Text(
                                             'حذف',
                                             style: AppFonts.buttonLg(
-                                                color: NewColors.red),
+                                              color: NewColors.red,
+                                            ),
                                           ),
                                         ),
                                         onTap: () {
@@ -266,7 +302,7 @@ class _PhotosState extends State<Photos> {
                                       ),
                                     ],
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
