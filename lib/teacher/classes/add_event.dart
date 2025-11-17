@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:royalbabyapp/teacher/classes/add_events.dart';
 import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
 import '../../widget/text-field.dart';
-import '../photo_video/add_photos.dart';
 
 class AddEvent extends StatefulWidget {
   const AddEvent({super.key});

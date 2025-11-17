@@ -40,7 +40,7 @@ class _ToiletOptionSelectorState extends State<ToiletOptionSelector> {
               value: option,
               groupValue: selectedValue,
               activeColor: NewColors.primary400,
-              fillColor: MaterialStateProperty.all(LineColors.radioStroke),
+              fillColor: WidgetStateProperty.all(LineColors.radioStroke),
               onChanged: (value) {
                 if (value != null) {
                   setState(() {
@@ -96,7 +96,7 @@ class _BehaviorOptionSelectorState extends State<BehaviorOptionSelector> {
               value: option,
               groupValue: selectedValue,
               activeColor: NewColors.primary400,
-              fillColor: MaterialStateProperty.all(LineColors.radioStroke),
+              fillColor: WidgetStateProperty.all(LineColors.radioStroke),
               onChanged: (value) {
                 if (value != null) {
                   setState(() {

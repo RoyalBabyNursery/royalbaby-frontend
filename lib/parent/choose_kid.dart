@@ -1,10 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:royalbabyapp/theme/colors.dart';
 import 'package:royalbabyapp/theme/fonts.dart';
 
-import 'home.dart';
 
 class ChooseKid extends StatefulWidget {
   const ChooseKid({super.key});

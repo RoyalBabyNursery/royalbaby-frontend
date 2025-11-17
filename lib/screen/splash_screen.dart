@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../teacher/nave_bar.dart';
 import 'log_in.dart';
 
 class SplashScreen extends StatefulWidget {

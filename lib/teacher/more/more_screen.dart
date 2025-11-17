@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:royalbabyapp/screen/log_in.dart';
 import 'package:royalbabyapp/teacher/more/about_us_screen.dart';

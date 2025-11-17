@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:royalbabyapp/teacher/classes/classes.dart';
 import 'package:royalbabyapp/teacher/classes/new_class_page.dart';
 import 'package:royalbabyapp/teacher/home/home_screen.dart';
 import 'package:royalbabyapp/teacher/more/more_screen.dart';

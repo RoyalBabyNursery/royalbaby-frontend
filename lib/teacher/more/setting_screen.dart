@@ -173,9 +173,9 @@ class _SettingScreenState extends State<SettingScreen> {
   }
 
   void _showPasswordSheet(BuildContext context) {
-    final _oldPassword = TextEditingController();
-    final _newPassword = TextEditingController();
-    final _confirmPassword = TextEditingController();
+    final oldPassword = TextEditingController();
+    final newPassword = TextEditingController();
+    final confirmPassword = TextEditingController();
 
     showModalBottomSheet(
       context: context,
@@ -200,7 +200,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   style: AppFonts.headingH4(color: NewColors.heading)),
               const SizedBox(height: 16),
               TextField(
-                controller: _oldPassword,
+                controller: oldPassword,
                 obscureText: true,
                 decoration: const InputDecoration(
                   labelText: 'كلمة المرور الحالية',
@@ -209,7 +209,7 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
               const SizedBox(height: 12),
               TextField(
-                controller: _newPassword,
+                controller: newPassword,
                 obscureText: true,
                 decoration: const InputDecoration(
                   labelText: 'كلمة المرور الجديدة',
@@ -218,7 +218,7 @@ class _SettingScreenState extends State<SettingScreen> {
               ),
               const SizedBox(height: 12),
               TextField(
-                controller: _confirmPassword,
+                controller: confirmPassword,
                 obscureText: true,
                 decoration: const InputDecoration(
                   labelText: 'تأكيد كلمة المرور الجديدة',
@@ -229,7 +229,7 @@ class _SettingScreenState extends State<SettingScreen> {
               ElevatedButton(
                 onPressed: () {
                   // Example validation
-                  if (_newPassword.text != _confirmPassword.text) {
+                  if (newPassword.text != confirmPassword.text) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                           content: Text('كلمتا المرور غير متطابقتين')),
@@ -302,7 +302,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   : null,
               onTap: () => onSelect(option),
             );
-          }).toList(),
+          }),
           // const SizedBox(height: 20),
         ],
       ),

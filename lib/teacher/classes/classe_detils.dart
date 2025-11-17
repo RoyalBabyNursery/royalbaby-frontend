@@ -1,14 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:royalbabyapp/riverpod_prov.dart';
-import 'package:royalbabyapp/teacher/classes/add_event.dart';
-import 'package:royalbabyapp/teacher/classes/studint_detils.dart';
-import 'package:royalbabyapp/teacher/reports/reports_screen.dart';
 import 'package:royalbabyapp/theme/colors.dart';
 
 import '../../theme/fonts.dart';
-import '../photo_video/add_photos.dart';
 
 // class ClasseDetils extends ConsumerStatefulWidget {
 //   final int classIndex;

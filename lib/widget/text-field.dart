@@ -99,7 +99,7 @@ class InfoText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('•   ' + label, style: AppFonts.body3(color: NewColors.body));
+    return Text('•   $label', style: AppFonts.body3(color: NewColors.body));
   }
 }
 

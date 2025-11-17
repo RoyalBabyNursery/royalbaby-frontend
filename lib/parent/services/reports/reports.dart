@@ -595,7 +595,7 @@ class ReportFilterSheet extends StatelessWidget {
                   ),
                   onChanged: (_) {},
                 );
-              }).toList(),
+              }),
               SizedBox(height: 10),
               Container(
                 height: MediaQuery.sizeOf(context).height * 0.057,

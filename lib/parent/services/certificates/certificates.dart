@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:royalbabyapp/parent/services/certificates/certificate_details.dart';
 import 'package:royalbabyapp/theme/colors.dart';

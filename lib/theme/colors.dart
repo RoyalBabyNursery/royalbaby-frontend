@@ -15,7 +15,7 @@ class NewColors {
   static const Color primary50 = Color(0xFFE9E7E3);
   static const Color alwaysWhite = Color(0xFFFFFFFF);
   static const Color inputBG = Color(0xFFF8F8F7);
-  static const Color heading = Color(0xFFF0F0F0D);
+  static const Color heading = Color(0xfff0f0f0d);
   static const Color body = Color(0xFF6B6B6A);
   static const Color supHeading = Color(0xFF383836);
   static const Color grayBox = Color(0xFFF7F6F6);

@@ -233,7 +233,7 @@ class _MoreDetiState extends State<MoreDeti> {
                           value: option,
                           groupValue: selectedReportTo,
                           activeColor: NewColors.primary400,
-                          fillColor: MaterialStateProperty.all(
+                          fillColor: WidgetStateProperty.all(
                             LineColors.radioStroke,
                           ),
                           visualDensity: const VisualDensity(

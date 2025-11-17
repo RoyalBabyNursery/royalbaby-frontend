@@ -5,7 +5,6 @@ import 'package:royalbabyapp/teacher/nave_bar.dart';
 import 'package:royalbabyapp/theme/colors.dart';
 import 'package:royalbabyapp/theme/fonts.dart';
 import 'package:royalbabyapp/widget/text-field.dart';
-import '../parent/choose_kid.dart';
 
 class LogIn extends ConsumerStatefulWidget {
   const LogIn({super.key});
